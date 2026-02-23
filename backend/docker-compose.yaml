@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  web:
+    container_name: "web_library"
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
+  db:
+    container_name: "db_library"
+    image: postgres:17
+    restart: always
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=library
+    ports:
+      - "5439:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d
+volumes:
+  postgres_data:
