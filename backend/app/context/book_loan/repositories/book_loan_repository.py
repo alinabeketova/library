@@ -108,15 +108,6 @@ class BookLoanRepository(BaseRepository[CreateBookLoanDTO, UpdateBookLoanDTO, Bo
             return book_copy_id
 
     async def create_book_reservation_id(self, book_reservation_id: int) -> int | None:
-        """
-        Создает запись о выдаче книги на основе бронирования
-
-        Args:
-            book_reservation_id: ID бронирования
-
-        Returns:
-            ID созданной записи о выдаче или None
-        """
         query = text("""
             WITH reservation_data AS (
                 -- Получаем данные бронирования
