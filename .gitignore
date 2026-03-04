@@ -1,54 +1,51 @@
-.idea
-.ipynb_checkpoints
-.mypy_cache
-.vscode
-__pycache__
-.pytest_cache
-htmlcov
-dist
-site
+# IDE
+.idea/
+.ipynb_checkpoints/
+.mypy_cache/
+.vscode/
+
+# Python
+__pycache__/
+.pytest_cache/
+htmlcov/
+dist/
+site/
 .coverage*
 coverage.xml
-.netlify
+
+# Databases
 test.db
 log.txt
-Pipfile.lock
-env3.*
+
+# Environment
 .env
-docs_build
-site_build
-.venv
+.env.*
+env3.*
+.venv/
+Pipfile.lock
+
+# Documentation
+docs_build/
+site_build/
 docs.zip
 archive.zip
 
 # vim temporary files
 *~
 .*.sw?
-.cache
 
 # macOS
 .DS_Store
 
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
+# Dependencies
+/node_modules/
 /.pnp
 .pnp.js
 
-# testing
-/coverage
+# Production
+/build/
 
-# production
-/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
