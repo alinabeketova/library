@@ -1,0 +1,39 @@
+:root {
+  --app-cornsilk: #FFF8DC;
+  --app-blanched: #FFEBCD;
+  --app-bisque: #FFE4C4;
+  --app-navajo: #FFDEAD;
+  --app-wheat: #F5DEB3;
+  --app-burlywood: #DEB887;
+  --app-tan: #D2B48C;
+  --app-rosy: #BC8F8F;
+  --app-sandy: #F4A460;
+  --app-goldenrod: #DAA520;
+  --app-dark-golden: #B8860B;
+  --app-peru: #CD853F;
+  --app-chocolate: #D2691E;
+  --app-saddle: #8B4513;
+  --app-sienna: #A0522D;
+  --app-brown: #A52A2A;
+  --app-maroon: #800000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: linear-gradient(135deg, var(--app-cornsilk) 0%, var(--app-blanched) 100%);
+  color: var(--app-saddle);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
