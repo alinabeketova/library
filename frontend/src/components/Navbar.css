@@ -1,0 +1,281 @@
+/* Navbar.css */
+:root {
+  --sp-cornsilk: #FFF8DC;
+  --sp-blanched: #FFEBCD;
+  --sp-bisque: #FFE4C4;
+  --sp-navajo: #FFDEAD;
+  --sp-wheat: #F5DEB3;
+  --sp-burlywood: #DEB887;
+  --sp-tan: #D2B48C;
+  --sp-rosy: #BC8F8F;
+  --sp-sandy: #F4A460;
+  --sp-goldenrod: #DAA520;
+  --sp-dark-golden: #B8860B;
+  --sp-peru: #CD853F;
+  --sp-chocolate: #D2691E;
+  --sp-saddle: #8B4513;
+  --sp-sienna: #A0522D;
+  --sp-brown: #A52A2A;
+  --sp-maroon: #800000;
+}
+
+.Navbar {
+  background: linear-gradient(135deg, var(--sp-maroon) 0%, var(--sp-saddle) 100%);
+  padding: 1rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid var(--sp-goldenrod);
+}
+
+.Navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--sp-cornsilk);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+.Navbar-logo i {
+  color: var(--sp-goldenrod);
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.Navbar-logo:hover {
+  color: var(--sp-wheat);
+  transform: scale(1.05);
+}
+
+.Navbar-logo:hover i {
+  color: var(--sp-dark-golden);
+}
+
+.Navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.Navbar-item {
+  position: relative;
+}
+
+.Navbar-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.8rem 1.2rem;
+  color: var(--sp-blanched);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.Navbar-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--sp-goldenrod), var(--sp-wheat));
+  transition: width 0.3s ease;
+}
+
+.Navbar-link:hover {
+  color: var(--sp-wheat);
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.Navbar-link:hover::before {
+  width: 80%;
+}
+
+.Navbar-link--active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--sp-wheat);
+  border: 1px solid var(--sp-goldenrod);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.Navbar-link--active::before {
+  width: 80%;
+  background: var(--sp-goldenrod);
+}
+
+.Navbar-link--highlight {
+  background: linear-gradient(135deg, var(--sp-goldenrod), var(--sp-dark-golden));
+  color: var(--sp-maroon);
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.Navbar-link--highlight i {
+  color: var(--sp-maroon);
+}
+
+.Navbar-link--highlight:hover {
+  background: linear-gradient(135deg, var(--sp-dark-golden), var(--sp-goldenrod));
+  color: var(--sp-saddle);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.Navbar-link--highlight:hover i {
+  color: var(--sp-saddle);
+}
+
+.Navbar-link--primary {
+  background: linear-gradient(135deg, var(--sp-goldenrod), var(--sp-dark-golden));
+  color: var(--sp-maroon);
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.Navbar-link--primary:hover {
+  background: linear-gradient(135deg, var(--sp-dark-golden), var(--sp-goldenrod));
+  color: var(--sp-saddle);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.Navbar-btnLogout {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.8rem 1.5rem;
+  background-color: transparent;
+  color: var(--sp-bisque);
+  border: 2px solid var(--sp-rosy);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.Navbar-btnLogout::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.Navbar-btnLogout:hover {
+  background-color: var(--sp-rosy);
+  color: var(--sp-maroon);
+  border-color: var(--sp-tan);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.Navbar-btnLogout:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+.Navbar-btnLogout:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .Navbar-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .Navbar-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .Navbar-logo {
+    font-size: 1.5rem;
+  }
+
+  .Navbar-link {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .Navbar-btnLogout {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .Navbar-menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .Navbar-item {
+    width: 100%;
+  }
+
+  .Navbar-link,
+  .Navbar-btnLogout {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* Анимации */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Navbar-item {
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* Добавляем иконки через Font Awesome (подключается отдельно) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
