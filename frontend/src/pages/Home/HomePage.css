@@ -1,0 +1,564 @@
+/* ============================================
+   БИБЛИОТЕЧНАЯ ТЕМА - ТЕПЛАЯ КОРИЧНЕВАЯ ПАЛИТРА
+   ============================================ */
+
+/* CSS Variables для цветовой схемы */
+:root {
+  --home-cornsilk: #FFF8DC;
+  --home-blanched: #FFEBCD;
+  --home-bisque: #FFE4C4;
+  --home-navajo: #FFDEAD;
+  --home-wheat: #F5DEB3;
+  --home-burlywood: #DEB887;
+  --home-tan: #D2B48C;
+  --home-rosy: #BC8F8F;
+  --home-sandy: #F4A460;
+  --home-goldenrod: #DAA520;
+  --home-dark-golden: #B8860B;
+  --home-peru: #CD853F;
+  --home-chocolate: #D2691E;
+  --home-saddle: #8B4513;
+  --home-sienna: #A0522D;
+  --home-brown: #A52A2A;
+  --home-maroon: #800000;
+}
+
+/* Основной контейнер */
+.HomePage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--home-cornsilk) 0%, var(--home-blanched) 100%);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: var(--home-saddle);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.HomePage-hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, var(--home-wheat) 0%, var(--home-burlywood) 100%);
+  border-bottom: 4px solid var(--home-saddle);
+  position: relative;
+  overflow: hidden;
+}
+
+.HomePage-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238B4513' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.3;
+}
+
+.HomePage-hero-title {
+  font-size: 3rem;
+  color: var(--home-maroon);
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px var(--home-navajo);
+  position: relative;
+  z-index: 1;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.HomePage-hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--home-sienna);
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+  font-style: italic;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.HomePage-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  position: relative;
+  z-index: 1;
+  font-family: inherit;
+}
+
+.HomePage-btn-primary {
+  background: linear-gradient(135deg, var(--home-saddle) 0%, var(--home-chocolate) 100%);
+  color: var(--home-cornsilk);
+  border-color: var(--home-saddle);
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+}
+
+.HomePage-btn-primary:hover {
+  background: linear-gradient(135deg, var(--home-chocolate) 0%, var(--home-peru) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+  color: white;
+}
+
+.HomePage-btn-small {
+  background: var(--home-tan);
+  color: var(--home-saddle);
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border: 2px solid var(--home-saddle);
+}
+
+.HomePage-btn-small:hover {
+  background: var(--home-saddle);
+  color: var(--home-cornsilk);
+}
+
+/* ============================================
+   ERROR BANNER
+   ============================================ */
+.HomePage-error-banner {
+  background: linear-gradient(135deg, var(--home-rosy) 0%, var(--home-sandy) 100%);
+  border: 3px solid var(--home-maroon);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 30px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(128, 0, 0, 0.2);
+}
+
+.HomePage-error-title {
+  color: var(--home-maroon);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.HomePage-error-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.HomePage-error-item {
+  color: var(--home-saddle);
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--home-sienna);
+  font-weight: 500;
+}
+
+.HomePage-error-item:last-child {
+  border-bottom: none;
+}
+
+.HomePage-error-hint {
+  color: var(--home-sienna);
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+/* ============================================
+   STATS SECTION
+   ============================================ */
+.HomePage-stats {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.HomePage-stats-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--home-saddle);
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.HomePage-stats-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--home-burlywood), var(--home-saddle), var(--home-burlywood));
+  border-radius: 2px;
+}
+
+.HomePage-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.HomePage-stat-card {
+  background: linear-gradient(145deg, var(--home-bisque) 0%, var(--home-navajo) 100%);
+  border: 3px solid var(--home-burlywood);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+}
+
+.HomePage-stat-card--clickable {
+  cursor: pointer;
+}
+
+.HomePage-stat-card--clickable:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.25);
+  border-color: var(--home-saddle);
+  background: linear-gradient(145deg, var(--home-navajo) 0%, var(--home-wheat) 100%);
+}
+
+.HomePage-stat-card--error {
+  background: linear-gradient(145deg, var(--home-rosy) 0%, var(--home-sandy) 100%);
+  border-color: var(--home-maroon);
+  opacity: 0.8;
+}
+
+.HomePage-stat-icon {
+  font-size: 2.5rem;
+  color: var(--home-saddle);
+  margin-bottom: 15px;
+  display: block;
+}
+
+.HomePage-stat-card--error .HomePage-stat-icon {
+  color: var(--home-maroon);
+}
+
+.HomePage-stat-number {
+  font-size: 2.5rem;
+  color: var(--home-saddle);
+  margin: 10px 0;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px var(--home-navajo);
+}
+
+.HomePage-stat-card--error .HomePage-stat-number {
+  color: var(--home-maroon);
+}
+
+.HomePage-stat-label {
+  font-size: 1.1rem;
+  color: var(--home-sienna);
+  margin: 0;
+  font-weight: 500;
+}
+
+.HomePage-click-hint {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: var(--home-peru);
+  font-weight: bold;
+  animation: HomePage-bounce 2s infinite;
+}
+
+.HomePage-error-hint {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: var(--home-maroon);
+  font-weight: bold;
+}
+
+@keyframes HomePage-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+/* ============================================
+   SECTIONS (BOOKS, LOCATIONS, FACULTIES)
+   ============================================ */
+.HomePage-books,
+.HomePage-locations,
+.HomePage-faculties {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.HomePage-section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--home-saddle);
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.HomePage-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--home-burlywood), var(--home-saddle), var(--home-burlywood));
+  border-radius: 2px;
+}
+
+/* ============================================
+   LOADING
+   ============================================ */
+.HomePage-loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: var(--home-sienna);
+  background: var(--home-bisque);
+  border-radius: 12px;
+  border: 2px dashed var(--home-burlywood);
+}
+
+/* ============================================
+   BOOKS GRID
+   ============================================ */
+.HomePage-books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.HomePage-book-card {
+  background: linear-gradient(145deg, var(--home-cornsilk) 0%, var(--home-blanched) 100%);
+  border: 2px solid var(--home-burlywood);
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(139, 69, 19, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.HomePage-book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+  border-color: var(--home-saddle);
+}
+
+.HomePage-book-title {
+  font-size: 1.2rem;
+  color: var(--home-saddle);
+  margin-bottom: 12px;
+  line-height: 1.4;
+  font-weight: bold;
+  border-bottom: 2px solid var(--home-burlywood);
+  padding-bottom: 10px;
+}
+
+.HomePage-book-author {
+  color: var(--home-sienna);
+  font-style: italic;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.HomePage-book-year {
+  color: var(--home-peru);
+  font-weight: 500;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.HomePage-book-stats {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid var(--home-burlywood);
+}
+
+.HomePage-book-stat {
+  background: var(--home-wheat);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--home-saddle);
+  border: 1px solid var(--home-tan);
+}
+
+/* ============================================
+   LOCATIONS GRID
+   ============================================ */
+.HomePage-locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.HomePage-location-card {
+  background: linear-gradient(145deg, var(--home-navajo) 0%, var(--home-wheat) 100%);
+  border: 2px solid var(--home-burlywood);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+}
+
+.HomePage-location-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.25);
+  border-color: var(--home-saddle);
+}
+
+.HomePage-location-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--home-saddle) 0%, var(--home-chocolate) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.8rem;
+  color: var(--home-cornsilk);
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+}
+
+.HomePage-location-name {
+  font-size: 1.3rem;
+  color: var(--home-saddle);
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.HomePage-location-address {
+  color: var(--home-sienna);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.HomePage-location-address i {
+  color: var(--home-peru);
+}
+
+/* ============================================
+   FACULTIES GRID
+   ============================================ */
+.HomePage-faculties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.HomePage-faculty-card {
+  background: linear-gradient(145deg, var(--home-blanched) 0%, var(--home-bisque) 100%);
+  border: 2px solid var(--home-burlywood);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+}
+
+.HomePage-faculty-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.25);
+  border-color: var(--home-saddle);
+}
+
+.HomePage-faculty-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--home-dark-golden) 0%, var(--home-goldenrod) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.8rem;
+  color: var(--home-cornsilk);
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+}
+
+.HomePage-faculty-name {
+  font-size: 1.3rem;
+  color: var(--home-saddle);
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.HomePage-faculty-description {
+  color: var(--home-sienna);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  .HomePage-hero-title {
+    font-size: 2rem;
+  }
+  
+  .HomePage-hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .HomePage-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .HomePage-books-grid,
+  .HomePage-locations-grid,
+  .HomePage-faculties-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .HomePage-stat-card,
+  .HomePage-book-card,
+  .HomePage-location-card,
+  .HomePage-faculty-card {
+    padding: 20px;
+  }
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--home-cornsilk);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--home-burlywood), var(--home-saddle));
+  border-radius: 6px;
+  border: 3px solid var(--home-cornsilk);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(var(--home-saddle), var(--home-chocolate));
+}
