@@ -1,0 +1,377 @@
+/* ============================================
+   LOGIN PAGE - ВСЕ 17 ЦВЕТОВ ПАЛИТРЫ
+   ============================================ */
+
+:root {
+  --lp-cornsilk: #FFF8DC;
+  --lp-blanched: #FFEBCD;
+  --lp-bisque: #FFE4C4;
+  --lp-navajo: #FFDEAD;
+  --lp-wheat: #F5DEB3;
+  --lp-burlywood: #DEB887;
+  --lp-tan: #D2B48C;
+  --lp-rosy: #BC8F8F;
+  --lp-sandy: #F4A460;
+  --lp-goldenrod: #DAA520;
+  --lp-dark-golden: #B8860B;
+  --lp-peru: #CD853F;
+  --lp-chocolate: #D2691E;
+  --lp-saddle: #8B4513;
+  --lp-sienna: #A0522D;
+  --lp-brown: #A52A2A;
+  --lp-maroon: #800000;
+}
+
+/* ============================================
+   MAIN CONTAINER - Cornsilk/BlanchedAlmond
+   ============================================ */
+.LoginPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--lp-cornsilk) 0%, var(--lp-blanched) 50%, var(--lp-bisque) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* ============================================
+   CONTAINER - полный градиент
+   ============================================ */
+.LoginPage-container {
+  width: 100%;
+  max-width: 450px;
+  background: linear-gradient(145deg, var(--lp-cornsilk) 0%, var(--lp-blanched) 50%, var(--lp-navajo) 100%);
+  border-radius: 24px;
+  border: 4px solid var(--lp-burlywood);
+  box-shadow: 0 15px 50px rgba(139, 69, 19, 0.25);
+  overflow: hidden;
+  animation: LoginPage-fadeIn 0.5s ease;
+}
+
+@keyframes LoginPage-fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   HEADER - SaddleBrown/Chocolate/Peru
+   ============================================ */
+.LoginPage-header {
+  text-align: center;
+  padding: 40px 30px;
+  background: linear-gradient(135deg, var(--lp-saddle) 0%, var(--lp-chocolate) 50%, var(--lp-peru) 100%);
+  color: var(--lp-cornsilk);
+  border-bottom: 4px solid var(--lp-burlywood);
+}
+
+.LoginPage-icon {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  animation: LoginPage-bounce 2s infinite;
+}
+
+@keyframes LoginPage-bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.LoginPage-title {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  font-weight: bold;
+}
+
+.LoginPage-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  font-style: italic;
+  color: var(--lp-navajo);
+  margin: 0;
+}
+
+/* ============================================
+   ERROR MESSAGE - RosyBrown/Brown
+   ============================================ */
+.LoginPage-error {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 25px 25px 0;
+  padding: 18px;
+  background: linear-gradient(135deg, var(--lp-rosy) 0%, var(--lp-brown) 100%);
+  border: 3px solid var(--lp-maroon);
+  border-radius: 12px;
+  color: var(--lp-cornsilk);
+  font-weight: 600;
+  animation: LoginPage-shake 0.5s ease;
+  box-shadow: 0 5px 20px rgba(128, 0, 0, 0.3);
+}
+
+@keyframes LoginPage-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.LoginPage-errorText {
+  flex: 1;
+}
+
+/* ============================================
+   FORM - все светлые тона
+   ============================================ */
+.LoginPage-form {
+  padding: 30px;
+}
+
+.LoginPage-formGroup {
+  margin-bottom: 25px;
+}
+
+.LoginPage-label {
+  display: block;
+  font-weight: 700;
+  color: var(--lp-sienna);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-left: 3px solid var(--lp-peru);
+}
+
+/* ============================================
+   INPUT WRAPPER - для иконок
+   ============================================ */
+.LoginPage-inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.LoginPage-inputIcon {
+  position: absolute;
+  left: 15px;
+  color: var(--lp-peru);
+  font-size: 1.1rem;
+  z-index: 10;
+}
+
+.LoginPage-input {
+  width: 100%;
+  padding: 14px 18px 14px 45px;
+  border: 2px solid var(--lp-burlywood);
+  border-radius: 10px;
+  background: var(--lp-cornsilk);
+  color: var(--lp-saddle);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(139, 69, 19, 0.08);
+}
+
+.LoginPage-input:focus {
+  outline: none;
+  border-color: var(--lp-sandy);
+  box-shadow: 0 0 0 4px rgba(244, 164, 96, 0.2), inset 0 2px 4px rgba(139, 69, 19, 0.05);
+  background: var(--lp-blanched);
+}
+
+.LoginPage-input--password {
+  padding-right: 45px;
+}
+
+.LoginPage-input::placeholder {
+  color: var(--lp-tan);
+  font-style: italic;
+}
+
+.LoginPage-input:disabled {
+  background: var(--lp-tan);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   TOGGLE PASSWORD BUTTON
+   ============================================ */
+.LoginPage-togglePassword {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--lp-saddle);
+  transition: all 0.2s ease;
+  z-index: 10;
+  padding: 0;
+}
+
+.LoginPage-togglePassword:hover {
+  color: var(--lp-chocolate);
+  transform: translateY(-50%) scale(1.15);
+}
+
+.LoginPage-togglePassword:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* ============================================
+   BUTTON - SaddleBrown/Peru/Goldenrod
+   ============================================ */
+.LoginPage-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: 2px solid var(--lp-burlywood);
+  background: linear-gradient(135deg, var(--lp-wheat) 0%, var(--lp-tan) 100%);
+  color: var(--lp-saddle);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  font-size: 1rem;
+  box-shadow: 0 3px 10px rgba(139, 69, 19, 0.15);
+}
+
+.LoginPage-btn--primary {
+  background: linear-gradient(135deg, var(--lp-saddle) 0%, var(--lp-chocolate) 50%, var(--lp-peru) 100%);
+  color: var(--lp-cornsilk);
+  border-color: var(--lp-saddle);
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.LoginPage-btn--primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--lp-chocolate) 0%, var(--lp-peru) 50%, var(--lp-sandy) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+}
+
+.LoginPage-btn--block {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.1rem;
+}
+
+.LoginPage-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background: var(--lp-tan);
+}
+
+/* ============================================
+   SPINNER - Goldenrod
+   ============================================ */
+.LoginPage-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--lp-cornsilk);
+  border-top-color: var(--lp-goldenrod);
+  border-radius: 50%;
+  animation: LoginPage-spin 1s linear infinite;
+}
+
+@keyframes LoginPage-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   FOOTER - Wheat/Burlywood
+   ============================================ */
+.LoginPage-footer {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(180deg, var(--lp-wheat) 0%, var(--lp-burlywood) 100%);
+  border-top: 3px solid var(--lp-burlywood);
+}
+
+.LoginPage-hint {
+  color: var(--lp-sienna);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.LoginPage-link {
+  color: var(--lp-saddle);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid var(--lp-peru);
+  transition: all 0.2s ease;
+}
+
+.LoginPage-link:hover {
+  color: var(--lp-maroon);
+  border-bottom-color: var(--lp-maroon);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 480px) {
+  .LoginPage {
+    padding: 20px 15px;
+  }
+  
+  .LoginPage-container {
+    border-radius: 16px;
+    border-width: 3px;
+  }
+  
+  .LoginPage-header {
+    padding: 30px 20px;
+  }
+  
+  .LoginPage-title {
+    font-size: 1.5rem;
+  }
+  
+  .LoginPage-form {
+    padding: 20px;
+  }
+  
+  .LoginPage-error {
+    margin: 15px 15px 0;
+    padding: 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ============================================
+   SCROLLBAR - полный градиент
+   ============================================ */
+.LoginPage ::-webkit-scrollbar {
+  width: 10px;
+}
+
+.LoginPage ::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, var(--lp-cornsilk), var(--lp-blanched));
+  border-radius: 5px;
+  border: 1px solid var(--lp-burlywood);
+}
+
+.LoginPage ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--lp-burlywood) 0%, var(--lp-saddle) 50%, var(--lp-chocolate) 100%);
+  border-radius: 5px;
+  border: 2px solid var(--lp-cornsilk);
+}
+
+.LoginPage ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--lp-tan) 0%, var(--lp-saddle) 50%, var(--lp-maroon) 100%);
+}
