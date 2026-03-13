@@ -1,0 +1,461 @@
+/* ============================================
+   SEARCH PAGE - ВСЕ 17 ЦВЕТОВ ПАЛИТРЫ
+   ============================================ */
+
+:root {
+  --sp-cornsilk: #FFF8DC;
+  --sp-blanched: #FFEBCD;
+  --sp-bisque: #FFE4C4;
+  --sp-navajo: #FFDEAD;
+  --sp-wheat: #F5DEB3;
+  --sp-burlywood: #DEB887;
+  --sp-tan: #D2B48C;
+  --sp-rosy: #BC8F8F;
+  --sp-sandy: #F4A460;
+  --sp-goldenrod: #DAA520;
+  --sp-dark-golden: #B8860B;
+  --sp-peru: #CD853F;
+  --sp-chocolate: #D2691E;
+  --sp-saddle: #8B4513;
+  --sp-sienna: #A0522D;
+  --sp-brown: #A52A2A;
+  --sp-maroon: #800000;
+}
+
+/* ============================================
+   MAIN CONTAINER - Cornsilk/BlanchedAlmond
+   ============================================ */
+.SearchPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--sp-cornsilk) 0%, var(--sp-blanched) 50%, var(--sp-bisque) 100%);
+  padding: 40px 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: var(--sp-saddle);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.SearchPage-title {
+  font-size: 2.5rem;
+  color: var(--sp-maroon);
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px var(--sp-navajo);
+  border-bottom: 4px solid var(--sp-burlywood);
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.SearchPage-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--sp-sienna), var(--sp-brown), var(--sp-sienna), transparent);
+}
+
+/* ============================================
+   LOADING - Wheat/Goldenrod
+   ============================================ */
+.SearchPage-loadingSpinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 20px;
+  color: var(--sp-sienna);
+  font-size: 1.3rem;
+  background: linear-gradient(145deg, var(--sp-wheat), var(--sp-navajo));
+  border-radius: 20px;
+  border: 3px dashed var(--sp-burlywood);
+  padding: 60px;
+}
+
+.SearchPage-loadingText {
+  font-style: italic;
+}
+
+/* ============================================
+   CONTAINER - Bisque/NavajoWhite
+   ============================================ */
+.SearchPage-container {
+  background: linear-gradient(145deg, var(--sp-bisque) 0%, var(--sp-navajo) 50%, var(--sp-wheat) 100%);
+  border-radius: 20px;
+  border: 4px solid var(--sp-burlywood);
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 30px rgba(139, 69, 19, 0.15);
+}
+
+/* ============================================
+   SEARCH FORM
+   ============================================ */
+.SearchPage-form {
+  margin-bottom: 25px;
+}
+
+.SearchPage-inputGroup {
+  display: flex;
+  gap: 15px;
+  align-items: stretch;
+}
+
+.SearchPage-select--type {
+  min-width: 150px;
+  background: linear-gradient(135deg, var(--sp-wheat) 0%, var(--sp-tan) 100%);
+  color: var(--sp-saddle);
+  font-weight: 600;
+  border: 3px solid var(--sp-burlywood);
+}
+
+.SearchPage-input {
+  flex: 1;
+  padding: 14px 20px;
+  border: 3px solid var(--sp-burlywood);
+  border-radius: 10px;
+  background: var(--sp-cornsilk);
+  color: var(--sp-saddle);
+  font-family: inherit;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(139, 69, 19, 0.08);
+}
+
+.SearchPage-input:focus {
+  outline: none;
+  border-color: var(--sp-sandy);
+  box-shadow: 0 0 0 4px rgba(244, 164, 96, 0.2), inset 0 2px 4px rgba(139, 69, 19, 0.05);
+  background: var(--sp-blanched);
+}
+
+.SearchPage-input::placeholder {
+  color: var(--sp-tan);
+  font-style: italic;
+}
+
+/* ============================================
+   BUTTONS - все цвета
+   ============================================ */
+.SearchPage-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: 2px solid var(--sp-burlywood);
+  background: linear-gradient(135deg, var(--sp-wheat) 0%, var(--sp-tan) 100%);
+  color: var(--sp-saddle);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  font-size: 1rem;
+  box-shadow: 0 3px 10px rgba(139, 69, 19, 0.15);
+}
+
+.SearchPage-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.25);
+}
+
+.SearchPage-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.SearchPage-btn--primary {
+  background: linear-gradient(135deg, var(--sp-saddle) 0%, var(--sp-chocolate) 50%, var(--sp-peru) 100%);
+  color: var(--sp-cornsilk);
+  border-color: var(--sp-saddle);
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  min-width: 100px;
+}
+
+.SearchPage-btn--primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--sp-chocolate) 0%, var(--sp-peru) 50%, var(--sp-sandy) 100%);
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+}
+
+.SearchPage-btn--secondary {
+  background: linear-gradient(135deg, var(--sp-tan) 0%, var(--sp-burlywood) 100%);
+  color: var(--sp-saddle);
+  border-color: var(--sp-burlywood);
+  margin-top: 15px;
+}
+
+.SearchPage-btn--secondary:hover {
+  background: linear-gradient(135deg, var(--sp-burlywood) 0%, var(--sp-wheat) 100%);
+  color: var(--sp-sienna);
+}
+
+.SearchPage-btn--small {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, var(--sp-tan) 0%, var(--sp-burlywood) 100%);
+  border-color: var(--sp-saddle);
+  color: var(--sp-saddle);
+}
+
+.SearchPage-btn--small:hover {
+  background: linear-gradient(135deg, var(--sp-saddle) 0%, var(--sp-chocolate) 100%);
+  color: var(--sp-cornsilk);
+}
+
+/* ============================================
+   FILTERS - все светлые тона
+   ============================================ */
+.SearchPage-filters {
+  border-top: 3px dashed var(--sp-burlywood);
+  padding-top: 25px;
+}
+
+.SearchPage-filtersTitle {
+  font-size: 1.3rem;
+  color: var(--sp-sienna);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.SearchPage-filtersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.SearchPage-filterItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.SearchPage-filterLabel {
+  font-weight: 600;
+  color: var(--sp-sienna);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.SearchPage-select--filter,
+.SearchPage-input--number {
+  padding: 12px 15px;
+  border: 2px solid var(--sp-burlywood);
+  border-radius: 8px;
+  background: var(--sp-cornsilk);
+  color: var(--sp-saddle);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.SearchPage-select--filter:focus,
+.SearchPage-input--number:focus {
+  outline: none;
+  border-color: var(--sp-sandy);
+  box-shadow: 0 0 0 3px rgba(244, 164, 96, 0.2);
+  background: var(--sp-blanched);
+}
+
+/* ============================================
+   ERROR - RosyBrown/Brown
+   ============================================ */
+.SearchPage-error {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--sp-rosy) 0%, var(--sp-sandy) 100%);
+  border: 3px solid var(--sp-maroon);
+  border-radius: 12px;
+  color: var(--sp-maroon);
+  font-weight: 600;
+  margin-bottom: 25px;
+  animation: SearchPage-shake 0.5s ease;
+}
+
+@keyframes SearchPage-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.SearchPage-errorText {
+  flex: 1;
+}
+
+/* ============================================
+   RESULTS - Cornsilk/Wheat
+   ============================================ */
+.SearchPage-results {
+  background: linear-gradient(145deg, var(--sp-cornsilk) 0%, var(--sp-blanched) 100%);
+  border-radius: 20px;
+  border: 4px solid var(--sp-burlywood);
+  padding: 30px;
+  box-shadow: 0 6px 25px rgba(139, 69, 19, 0.12);
+}
+
+.SearchPage-resultsTitle {
+  font-size: 1.5rem;
+  color: var(--sp-saddle);
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid var(--sp-burlywood);
+}
+
+/* ============================================
+   RESULTS GRID
+   ============================================ */
+.SearchPage-resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.SearchPage-bookCard {
+  background: linear-gradient(145deg, var(--sp-navajo) 0%, var(--sp-wheat) 100%);
+  border: 3px solid var(--sp-burlywood);
+  border-radius: 16px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.SearchPage-bookCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(139, 69, 19, 0.25);
+  border-color: var(--sp-saddle);
+}
+
+.SearchPage-bookTitle {
+  font-size: 1.2rem;
+  color: var(--sp-saddle);
+  margin-bottom: 12px;
+  line-height: 1.4;
+  font-weight: bold;
+  border-bottom: 2px solid var(--sp-burlywood);
+  padding-bottom: 10px;
+}
+
+.SearchPage-bookAuthor {
+  color: var(--sp-sienna);
+  font-style: italic;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.SearchPage-bookYear {
+  color: var(--sp-peru);
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.SearchPage-bookStats {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid var(--sp-burlywood);
+}
+
+.SearchPage-bookStat {
+  background: var(--sp-cornsilk);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--sp-saddle);
+  border: 1px solid var(--sp-tan);
+  font-weight: 500;
+}
+
+/* ============================================
+   NO RESULTS - Tan/Burlywood
+   ============================================ */
+.SearchPage-noResults {
+  text-align: center;
+  padding: 60px;
+  background: linear-gradient(145deg, var(--sp-wheat), var(--sp-navajo));
+  border-radius: 16px;
+  border: 3px dashed var(--sp-burlywood);
+}
+
+.SearchPage-noResultsText {
+  color: var(--sp-sienna);
+  font-size: 1.2rem;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  .SearchPage {
+    padding: 20px 15px;
+  }
+  
+  .SearchPage-title {
+    font-size: 1.8rem;
+  }
+  
+  .SearchPage-container {
+    padding: 20px;
+  }
+  
+  .SearchPage-inputGroup {
+    flex-direction: column;
+  }
+  
+  .SearchPage-select--type {
+    width: 100%;
+  }
+  
+  .SearchPage-filtersGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .SearchPage-results {
+    padding: 20px;
+  }
+  
+  .SearchPage-resultsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   SCROLLBAR - полный градиент
+   ============================================ */
+.SearchPage ::-webkit-scrollbar {
+  width: 12px;
+}
+
+.SearchPage ::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, var(--sp-cornsilk), var(--sp-blanched));
+  border-radius: 6px;
+  border: 1px solid var(--sp-burlywood);
+}
+
+.SearchPage ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--sp-burlywood) 0%, var(--sp-saddle) 50%, var(--sp-chocolate) 100%);
+  border-radius: 6px;
+  border: 2px solid var(--sp-cornsilk);
+}
+
+.SearchPage ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--sp-tan) 0%, var(--sp-saddle) 50%, var(--sp-maroon) 100%);
+}
