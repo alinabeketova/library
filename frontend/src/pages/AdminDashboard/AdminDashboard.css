@@ -1,0 +1,1238 @@
+/* ============================================
+   ADMIN DASHBOARD - ВСЕ ЦВЕТА ПАЛИТРЫ
+   ============================================ */
+
+/* CSS Variables - все 17 цветов */
+:root {
+  --admin-cornsilk: #FFF8DC;      /* 255, 248, 220 */
+  --admin-blanched: #FFEBCD;      /* 255, 235, 205 */
+  --admin-bisque: #FFE4C4;        /* 255, 228, 196 */
+  --admin-navajo: #FFDEAD;        /* 255, 222, 173 */
+  --admin-wheat: #F5DEB3;         /* 245, 222, 179 */
+  --admin-burlywood: #DEB887;     /* 222, 184, 135 */
+  --admin-tan: #D2B48C;           /* 210, 180, 140 */
+  --admin-rosy: #BC8F8F;          /* 188, 143, 143 */
+  --admin-sandy: #F4A460;         /* 244, 164, 96 */
+  --admin-goldenrod: #DAA520;     /* 218, 165, 32 */
+  --admin-dark-golden: #B8860B;    /* 184, 134, 11 */
+  --admin-peru: #CD853F;          /* 205, 133, 63 */
+  --admin-chocolate: #D2691E;     /* 210, 105, 30 */
+  --admin-saddle: #8B4513;         /* 139, 69, 19 */
+  --admin-sienna: #A0522D;         /* 160, 82, 45 */
+  --admin-brown: #A52A2A;          /* 165, 42, 42 */
+  --admin-maroon: #800000;         /* 128, 0, 0 */
+}
+
+/* ============================================
+   CONTAINER - Cornsilk + BlanchedAlmond
+   ============================================ */
+.AdminDashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--admin-cornsilk) 0%, var(--admin-blanched) 50%, var(--admin-bisque) 100%);
+  padding: 30px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: var(--admin-saddle);
+}
+
+/* ============================================
+   TITLE - Maroon + Sienna
+   ============================================ */
+.AdminDashboard-title {
+  font-size: 2.5rem;
+  color: var(--admin-maroon);
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 2px 2px 4px var(--admin-navajo);
+  border-bottom: 3px solid var(--admin-burlywood);
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.AdminDashboard-title::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--admin-sienna), var(--admin-brown), var(--admin-sienna), transparent);
+}
+
+/* ============================================
+   STATS GRID - все цвета градиентом
+   ============================================ */
+.AdminDashboard-statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.AdminDashboard-statCard {
+  border: 3px solid;
+  border-radius: 16px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.15);
+  transition: all 0.3s ease;
+}
+
+.AdminDashboard-statCard:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(139, 69, 19, 0.3);
+}
+
+.AdminDashboard-statIcon {
+  font-size: 2.2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.AdminDashboard-statValue {
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.AdminDashboard-statLabel {
+  font-size: 0.95rem;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+/* ============================================
+   TABS - градиент всех коричневых
+   ============================================ */
+.AdminDashboard-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 4px solid var(--admin-burlywood);
+  padding-bottom: 0;
+  flex-wrap: wrap;
+  background: linear-gradient(180deg, var(--admin-blanched) 0%, var(--admin-bisque) 100%);
+  padding: 15px 15px 0 15px;
+  border-radius: 12px 12px 0 0;
+}
+
+.AdminDashboard-tabBtn {
+  padding: 12px 24px;
+  background: var(--admin-wheat);
+  border: 2px solid var(--admin-burlywood);
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  color: var(--admin-saddle);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  font-size: 1rem;
+  position: relative;
+  top: 2px;
+}
+
+.AdminDashboard-tabBtn:hover {
+  background: var(--admin-navajo);
+  border-color: var(--admin-tan);
+  color: var(--admin-sienna);
+}
+
+.AdminDashboard-tabBtn--active {
+  background: linear-gradient(180deg, var(--admin-saddle) 0%, var(--admin-chocolate) 50%, var(--admin-peru) 100%);
+  color: var(--admin-cornsilk);
+  border-color: var(--admin-saddle);
+  border-bottom: 4px solid var(--admin-saddle);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.AdminDashboard-tabContent {
+  background: linear-gradient(180deg, var(--admin-cornsilk) 0%, var(--admin-blanched) 50%, var(--admin-navajo) 100%);
+  border: 4px solid var(--admin-burlywood);
+  border-radius: 0 16px 16px 16px;
+  padding: 30px;
+  box-shadow: 0 6px 25px rgba(139, 69, 19, 0.15);
+}
+
+/* ============================================
+   SECTION HEADER - Sienna + Brown
+   ============================================ */
+.AdminDashboard-sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 15px;
+  background: linear-gradient(90deg, var(--admin-bisque), var(--admin-navajo), var(--admin-bisque));
+  border-radius: 12px;
+  border: 2px dashed var(--admin-tan);
+}
+
+.AdminDashboard-sectionTitle {
+  font-size: 1.8rem;
+  color: var(--admin-sienna);
+  margin: 0;
+  position: relative;
+  padding-left: 15px;
+  border-left: 5px solid var(--admin-chocolate);
+  text-shadow: 1px 1px 2px var(--admin-navajo);
+}
+
+/* ============================================
+   BUTTONS - все оттенки
+   ============================================ */
+.AdminDashboard-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 2px solid var(--admin-burlywood);
+  background: linear-gradient(180deg, var(--admin-wheat) 0%, var(--admin-tan) 100%);
+  color: var(--admin-saddle);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.15);
+}
+
+.AdminDashboard-btn:hover:not(:disabled) {
+  background: linear-gradient(180deg, var(--admin-navajo) 0%, var(--admin-wheat) 100%);
+  border-color: var(--admin-sandy);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.25);
+}
+
+.AdminDashboard-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--admin-tan);
+}
+
+/* Primary - SaddleBrown/Peru/Chocolate */
+.AdminDashboard-btn--primary {
+  background: linear-gradient(135deg, var(--admin-saddle) 0%, var(--admin-chocolate) 50%, var(--admin-peru) 100%);
+  color: var(--admin-cornsilk);
+  border-color: var(--admin-saddle);
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+}
+
+.AdminDashboard-btn--primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--admin-chocolate) 0%, var(--admin-peru) 50%, var(--admin-sandy) 100%);
+  border-color: var(--admin-chocolate);
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.5);
+  color: white;
+}
+
+/* Search - Goldenrod/DarkGoldenRod */
+.AdminDashboard-btn--search {
+  background: linear-gradient(135deg, var(--admin-goldenrod) 0%, var(--admin-dark-golden) 100%);
+  color: var(--admin-maroon);
+  border-color: var(--admin-dark-golden);
+  font-weight: bold;
+}
+
+.AdminDashboard-btn--search:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--admin-dark-golden) 0%, var(--admin-peru) 100%);
+  color: var(--admin-cornsilk);
+}
+
+/* Secondary - SandyBrown */
+.AdminDashboard-btn--secondary {
+  background: linear-gradient(135deg, var(--admin-sandy) 0%, var(--admin-goldenrod) 100%);
+  color: var(--admin-maroon);
+  border-color: var(--admin-peru);
+}
+
+/* Link - Peru/Chocolate */
+.AdminDashboard-btn--link {
+  background: transparent;
+  border: none;
+  color: var(--admin-chocolate);
+  text-decoration: underline;
+  text-decoration-color: var(--admin-peru);
+  padding: 5px 10px;
+  box-shadow: none;
+}
+
+.AdminDashboard-btn--link:hover {
+  color: var(--admin-maroon);
+  background: var(--admin-blanched);
+  transform: none;
+}
+
+/* Small buttons */
+.AdminDashboard-btnSmall {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+}
+
+.AdminDashboard-btnSmall--danger {
+  background: linear-gradient(135deg, var(--admin-rosy) 0%, var(--admin-brown) 100%);
+  color: var(--admin-cornsilk);
+  border-color: var(--admin-maroon);
+}
+
+.AdminDashboard-btnSmall--danger:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--admin-brown) 0%, var(--admin-maroon) 100%);
+  box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+}
+
+/* Remove button - RosyBrown/Maroon */
+.AdminDashboard-btnRemove {
+  background: linear-gradient(135deg, var(--admin-rosy) 0%, var(--admin-brown) 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-left: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(165, 42, 42, 0.3);
+}
+
+.AdminDashboard-btnRemove:hover {
+  background: linear-gradient(135deg, var(--admin-brown) 0%, var(--admin-maroon) 100%);
+  transform: scale(1.15) rotate(90deg);
+  box-shadow: 0 3px 8px rgba(128, 0, 0, 0.4);
+}
+
+/* ============================================
+   SEARCH BAR - Bisque/Tan/Wheat
+   ============================================ */
+.AdminDashboard-searchBar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  background: linear-gradient(145deg, var(--admin-bisque) 0%, var(--admin-tan) 100%);
+  padding: 18px;
+  border-radius: 14px;
+  border: 3px solid var(--admin-burlywood);
+  position: relative;
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+}
+
+.AdminDashboard-searchIcon {
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--admin-sienna);
+  font-size: 1.1rem;
+}
+
+.AdminDashboard-searchInput {
+  flex: 1;
+  padding: 14px 15px 14px 45px;
+  border: 2px solid var(--admin-burlywood);
+  border-radius: 10px;
+  background: var(--admin-cornsilk);
+  color: var(--admin-saddle);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(139, 69, 19, 0.1);
+}
+
+.AdminDashboard-searchInput:focus {
+  outline: none;
+  border-color: var(--admin-sandy);
+  box-shadow: 0 0 0 4px rgba(244, 164, 96, 0.2), inset 0 2px 4px rgba(139, 69, 19, 0.05);
+}
+
+.AdminDashboard-searchClear {
+  position: absolute;
+  right: 110px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, var(--admin-rosy) 0%, var(--admin-brown) 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(165, 42, 42, 0.3);
+}
+
+.AdminDashboard-searchClear:hover {
+  background: linear-gradient(135deg, var(--admin-brown) 0%, var(--admin-maroon) 100%);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Info и Error с разными цветами */
+.AdminDashboard-searchInfo {
+  background: linear-gradient(135deg, var(--admin-navajo) 0%, var(--admin-wheat) 100%);
+  border: 2px dashed var(--admin-goldenrod);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--admin-sienna);
+  font-weight: 500;
+}
+
+.AdminDashboard-searchError {
+  background: linear-gradient(135deg, var(--admin-rosy) 0%, var(--admin-sandy) 100%);
+  border: 3px solid var(--admin-maroon);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--admin-maroon);
+  font-weight: 600;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 15px rgba(128, 0, 0, 0.2);
+}
+
+/* ============================================
+   FORMS - все светлые оттенки
+   ============================================ */
+.AdminDashboard-addForm {
+  background: linear-gradient(145deg, var(--admin-blanched) 0%, var(--admin-bisque) 50%, var(--admin-navajo) 100%);
+  border: 4px solid var(--admin-burlywood);
+  border-radius: 18px;
+  padding: 35px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 30px rgba(139, 69, 19, 0.2);
+  animation: AdminDashboard-slideDown 0.4s ease;
+}
+
+@keyframes AdminDashboard-slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.AdminDashboard-formTitle {
+  font-size: 1.6rem;
+  color: var(--admin-maroon);
+  margin-bottom: 8px;
+  border-bottom: 3px solid var(--admin-burlywood);
+  padding-bottom: 12px;
+  text-shadow: 1px 1px 2px var(--admin-navajo);
+}
+
+.AdminDashboard-formSubtitle {
+  color: var(--admin-sienna);
+  font-style: italic;
+  margin-bottom: 25px;
+  font-size: 1rem;
+  background: var(--admin-cornsilk);
+  padding: 8px 15px;
+  border-radius: 8px;
+  border-left: 4px solid var(--admin-peru);
+  display: inline-block;
+}
+
+.AdminDashboard-formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.AdminDashboard-formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.AdminDashboard-formGroup--fullWidth {
+  grid-column: 1 / -1;
+}
+
+.AdminDashboard-formLabel {
+  font-weight: 700;
+  color: var(--admin-saddle);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, var(--admin-wheat), transparent);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.AdminDashboard-formInput,
+.AdminDashboard-formSelect {
+  padding: 14px 18px;
+  border: 2px solid var(--admin-burlywood);
+  border-radius: 10px;
+  background: var(--admin-cornsilk);
+  color: var(--admin-saddle);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(139, 69, 19, 0.08);
+}
+
+.AdminDashboard-formInput:focus,
+.AdminDashboard-formSelect:focus {
+  outline: none;
+  border-color: var(--admin-sandy);
+  box-shadow: 0 0 0 4px rgba(244, 164, 96, 0.25), inset 0 2px 4px rgba(139, 69, 19, 0.05);
+  background: var(--admin-blanched);
+}
+
+/* Error state - RosyBrown */
+.AdminDashboard-formInput--error,
+.AdminDashboard-formSelect--error {
+  border-color: var(--admin-rosy);
+  background: linear-gradient(180deg, #fff5f5 0%, var(--admin-blanched) 100%);
+  box-shadow: 0 0 0 3px rgba(188, 143, 143, 0.3);
+}
+
+/* Disabled - Tan */
+.AdminDashboard-formInput--disabled {
+  background: linear-gradient(180deg, var(--admin-tan) 0%, var(--admin-burlywood) 100%);
+  color: var(--admin-sienna);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.AdminDashboard-formSelect--multi {
+  min-height: 120px;
+  padding: 10px;
+  background: var(--admin-cornsilk);
+}
+
+.AdminDashboard-formHint {
+  font-size: 0.85rem;
+  color: var(--admin-peru);
+  font-style: italic;
+  background: var(--admin-wheat);
+  padding: 6px 12px;
+  border-radius: 6px;
+  border-left: 3px solid var(--admin-goldenrod);
+}
+
+/* Field Error - Brown/Maroon */
+.AdminDashboard-fieldError {
+  color: var(--admin-maroon);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-weight: 600;
+  background: rgba(188, 143, 143, 0.2);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border-left: 3px solid var(--admin-rosy);
+}
+
+/* Form Error Banner */
+.AdminDashboard-formError {
+  background: linear-gradient(135deg, var(--admin-rosy) 0%, var(--admin-sandy) 100%);
+  border: 3px solid var(--admin-maroon);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--admin-maroon);
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(128, 0, 0, 0.2);
+}
+
+.AdminDashboard-formActions {
+  display: flex;
+  gap: 18px;
+  justify-content: flex-start;
+  padding-top: 25px;
+  border-top: 3px dashed var(--admin-burlywood);
+  margin-top: 10px;
+}
+
+/* ============================================
+   NEW AUTHOR FORM - Wheat/Goldenrod
+   ============================================ */
+.AdminDashboard-newAuthorForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 12px;
+  align-items: end;
+  background: var(--admin-wheat);
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid var(--admin-burlywood);
+}
+
+.AdminDashboard-selectedAuthors {
+  margin-top: 20px;
+  padding: 20px;
+  background: linear-gradient(145deg, var(--admin-cornsilk) 0%, var(--admin-blanched) 100%);
+  border-radius: 12px;
+  border: 3px solid var(--admin-burlywood);
+  box-shadow: inset 0 2px 8px rgba(139, 69, 19, 0.1);
+}
+
+.AdminDashboard-selectedAuthors strong {
+  color: var(--admin-saddle);
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  border-bottom: 2px solid var(--admin-burlywood);
+  padding-bottom: 8px;
+}
+
+.AdminDashboard-selectedAuthorsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Разноцветные теги авторов */
+.AdminDashboard-selectedAuthorItem {
+  background: linear-gradient(135deg, var(--admin-navajo) 0%, var(--admin-wheat) 100%);
+  padding: 10px 16px;
+  border-radius: 25px;
+  border: 2px solid var(--admin-burlywood);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--admin-saddle);
+  font-weight: 500;
+  box-shadow: 0 3px 8px rgba(139, 69, 19, 0.15);
+  transition: all 0.2s ease;
+}
+
+.AdminDashboard-selectedAuthorItem:nth-child(2n) {
+  background: linear-gradient(135deg, var(--admin-wheat) 0%, var(--admin-tan) 100%);
+  border-color: var(--admin-tan);
+}
+
+.AdminDashboard-selectedAuthorItem:nth-child(3n) {
+  background: linear-gradient(135deg, var(--admin-bisque) 0%, var(--admin-navajo) 100%);
+  border-color: var(--admin-sandy);
+}
+
+.AdminDashboard-selectedAuthorItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(139, 69, 19, 0.25);
+}
+
+/* ============================================
+   DATA TABLE - полный градиент
+   ============================================ */
+.AdminDashboard-dataTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--admin-cornsilk);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 4px solid var(--admin-burlywood);
+  box-shadow: 0 6px 25px rgba(139, 69, 19, 0.15);
+}
+
+.AdminDashboard-dataTableHead {
+  background: linear-gradient(180deg, var(--admin-saddle) 0%, var(--admin-chocolate) 50%, var(--admin-sienna) 100%);
+}
+
+.AdminDashboard-dataTableHeader {
+  padding: 18px 15px;
+  text-align: left;
+  font-weight: 700;
+  border-bottom: 4px solid var(--admin-burlywood);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.AdminDashboard-dataTableBody {
+  background: var(--admin-cornsilk);
+}
+
+.AdminDashboard-dataTableRow {
+  transition: all 0.25s ease;
+  border-bottom: 1px solid var(--admin-burlywood);
+}
+
+.AdminDashboard-dataTableRow:nth-child(even) {
+  background: linear-gradient(90deg, var(--admin-blanched), var(--admin-cornsilk));
+}
+
+.AdminDashboard-dataTableRow:nth-child(odd) {
+  background: linear-gradient(90deg, var(--admin-cornsilk), var(--admin-blanched));
+}
+
+.AdminDashboard-dataTableRow:hover {
+  background: linear-gradient(90deg, var(--admin-navajo), var(--admin-wheat), var(--admin-navajo)) !important;
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+  z-index: 10;
+  position: relative;
+}
+
+.AdminDashboard-dataTableCell {
+  padding: 18px 15px;
+  color: var(--admin-saddle);
+  border-bottom: 1px solid var(--admin-burlywood);
+  font-weight: 500;
+}
+
+.AdminDashboard-dataTableRow:last-child .AdminDashboard-dataTableCell {
+  border-bottom: none;
+}
+
+/* ============================================
+   ACTION BUTTONS - все оттенки
+   ============================================ */
+.AdminDashboard-actionBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  transition: all 0.25s ease;
+  font-size: 1rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.AdminDashboard-actionBtn:last-child {
+  margin-right: 0;
+}
+
+/* Edit - Goldenrod/DarkGoldenRod */
+.AdminDashboard-actionBtn--edit {
+  background: linear-gradient(135deg, var(--admin-goldenrod) 0%, var(--admin-dark-golden) 100%);
+  color: var(--admin-maroon);
+  border-color: var(--admin-dark-golden);
+}
+
+.AdminDashboard-actionBtn--edit:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--admin-dark-golden) 0%, var(--admin-peru) 100%);
+  color: var(--admin-cornsilk);
+  transform: translateY(-3px) rotate(-5deg);
+  box-shadow: 0 5px 15px rgba(184, 134, 11, 0.4);
+}
+
+/* View - Tan/Burlywood */
+.AdminDashboard-actionBtn--view {
+  background: linear-gradient(135deg, var(--admin-tan) 0%, var(--admin-burlywood) 100%);
+  color: var(--admin-saddle);
+  border-color: var(--admin-burlywood);
+}
+
+.AdminDashboard-actionBtn--view:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--admin-burlywood) 0%, var(--admin-wheat) 100%);
+  color: var(--admin-sienna);
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* Delete - RosyBrown/Brown/Maroon */
+.AdminDashboard-actionBtn--delete {
+  background: linear-gradient(135deg, var(--admin-rosy) 0%, var(--admin-brown) 100%);
+  color: var(--admin-cornsilk);
+  border-color: var(--admin-maroon);
+}
+
+.AdminDashboard-actionBtn--delete:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--admin-brown) 0%, var(--admin-maroon) 100%);
+  transform: translateY(-3px) rotate(5deg);
+  box-shadow: 0 5px 15px rgba(128, 0, 0, 0.4);
+}
+
+.AdminDashboard-actionBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ============================================
+   BRANCHES GRID - разноцветные карточки
+   ============================================ */
+.AdminDashboard-branchesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.AdminDashboard-branchCard {
+  border-radius: 18px;
+  padding: 30px;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.AdminDashboard-branchCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--admin-goldenrod), var(--admin-chocolate), var(--admin-goldenrod));
+}
+
+/* Карточки филиалов в разных цветах */
+.AdminDashboard-branchCard:nth-child(4n+1) {
+  background: linear-gradient(145deg, var(--admin-cornsilk) 0%, var(--admin-blanched) 100%);
+  border: 3px solid var(--admin-burlywood);
+}
+
+.AdminDashboard-branchCard:nth-child(4n+2) {
+  background: linear-gradient(145deg, var(--admin-navajo) 0%, var(--admin-wheat) 100%);
+  border: 3px solid var(--admin-tan);
+}
+
+.AdminDashboard-branchCard:nth-child(4n+3) {
+  background: linear-gradient(145deg, var(--admin-bisque) 0%, var(--admin-navajo) 100%);
+  border: 3px solid var(--admin-sandy);
+}
+
+.AdminDashboard-branchCard:nth-child(4n+4) {
+  background: linear-gradient(145deg, var(--admin-wheat) 0%, var(--admin-tan) 100%);
+  border: 3px solid var(--admin-burlywood);
+}
+
+.AdminDashboard-branchCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(139, 69, 19, 0.3);
+  border-color: var(--admin-saddle);
+}
+
+.AdminDashboard-branchName {
+  font-size: 1.4rem;
+  color: var(--admin-saddle);
+  margin-bottom: 15px;
+  border-bottom: 3px solid var(--admin-burlywood);
+  padding-bottom: 12px;
+  font-weight: bold;
+}
+
+.AdminDashboard-branchAddress {
+  color: var(--admin-sienna);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.AdminDashboard-branchIcon {
+  color: var(--admin-chocolate);
+  font-size: 1.2rem;
+}
+
+.AdminDashboard-branchActions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 18px;
+  border-top: 2px dashed var(--admin-burlywood);
+}
+
+/* ============================================
+   MODAL - полный спектр
+   ============================================ */
+.AdminDashboard-modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(139, 69, 19, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  animation: AdminDashboard-fadeIn 0.3s ease;
+}
+
+.AdminDashboard-modalContent {
+  background: linear-gradient(145deg, var(--admin-cornsilk) 0%, var(--admin-blanched) 50%, var(--admin-bisque) 100%);
+  border: 5px solid var(--admin-burlywood);
+  border-radius: 24px;
+  width: 90%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(139, 69, 19, 0.4);
+  animation: AdminDashboard-modalSlide 0.4s ease;
+}
+
+@keyframes AdminDashboard-modalSlide {
+  from { opacity: 0; transform: scale(0.8) translateY(-40px) rotateX(10deg); }
+  to { opacity: 1; transform: scale(1) translateY(0) rotateX(0); }
+}
+
+.AdminDashboard-modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  background: linear-gradient(180deg, var(--admin-wheat) 0%, var(--admin-navajo) 50%, var(--admin-bisque) 100%);
+  border-bottom: 4px solid var(--admin-burlywood);
+  border-radius: 19px 19px 0 0;
+  position: relative;
+}
+
+.AdminDashboard-modalHeader::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 30px;
+  right: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--admin-saddle), transparent);
+}
+
+.AdminDashboard-modalTitle {
+  font-size: 1.7rem;
+  color: var(--admin-maroon);
+  margin: 0;
+  text-shadow: 1px 1px 2px var(--admin-navajo);
+  font-weight: bold;
+}
+
+.AdminDashboard-modalClose {
+  background: linear-gradient(135deg, var(--admin-rosy) 0%, var(--admin-brown) 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(165, 42, 42, 0.3);
+}
+
+.AdminDashboard-modalClose:hover {
+  background: linear-gradient(135deg, var(--admin-brown) 0%, var(--admin-maroon) 100%);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 6px 15px rgba(128, 0, 0, 0.4);
+}
+
+.AdminDashboard-modalBody {
+  padding: 30px;
+  background: linear-gradient(180deg, var(--admin-cornsilk) 0%, var(--admin-blanched) 100%);
+}
+
+.AdminDashboard-modalFooter {
+  padding: 25px 30px;
+  background: linear-gradient(180deg, var(--admin-bisque) 0%, var(--admin-navajo) 100%);
+  border-top: 3px solid var(--admin-burlywood);
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 0 0 19px 19px;
+}
+
+/* ============================================
+   USER DETAILS GRID - разноцветные items
+   ============================================ */
+.AdminDashboard-userDetailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.AdminDashboard-detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid;
+  transition: all 0.2s ease;
+}
+
+.AdminDashboard-detailItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(139, 69, 19, 0.2);
+}
+
+/* Разноцветные детали */
+.AdminDashboard-detailItem:nth-child(4n+1) {
+  background: linear-gradient(135deg, var(--admin-wheat) 0%, var(--admin-navajo) 100%);
+  border-color: var(--admin-burlywood);
+}
+
+.AdminDashboard-detailItem:nth-child(4n+2) {
+  background: linear-gradient(135deg, var(--admin-bisque) 0%, var(--admin-blanched) 100%);
+  border-color: var(--admin-tan);
+}
+
+.AdminDashboard-detailItem:nth-child(4n+3) {
+  background: linear-gradient(135deg, var(--admin-navajo) 0%, var(--admin-wheat) 100%);
+  border-color: var(--admin-sandy);
+}
+
+.AdminDashboard-detailItem:nth-child(4n+4) {
+  background: linear-gradient(135deg, var(--admin-blanched) 0%, var(--admin-cornsilk) 100%);
+  border-color: var(--admin-burlywood);
+}
+
+.AdminDashboard-detailItem--fullWidth {
+  grid-column: 1 / -1;
+  background: linear-gradient(90deg, var(--admin-wheat), var(--admin-navajo), var(--admin-wheat)) !important;
+  border-color: var(--admin-saddle) !important;
+}
+
+.AdminDashboard-detailLabel {
+  font-weight: 700;
+  color: var(--admin-sienna);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.AdminDashboard-detailValue {
+  color: var(--admin-saddle);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.AdminDashboard-textSuccess {
+  color: var(--admin-dark-golden);
+  font-weight: bold;
+  text-shadow: 1px 1px 2px var(--admin-navajo);
+}
+
+.AdminDashboard-fontBold {
+  font-weight: bold;
+}
+
+/* ============================================
+   LOADING & EMPTY STATES
+   ============================================ */
+.AdminDashboard-loadingSpinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 70px;
+  gap: 20px;
+  color: var(--admin-sienna);
+  font-size: 1.3rem;
+  background: linear-gradient(145deg, var(--admin-blanched), var(--admin-bisque));
+  border-radius: 20px;
+  border: 3px dashed var(--admin-burlywood);
+}
+
+.AdminDashboard-loadingSpinner--small {
+  padding: 40px;
+  font-size: 1.1rem;
+}
+
+.AdminDashboard-emptyState {
+  text-align: center;
+  padding: 70px 30px;
+  background: linear-gradient(145deg, var(--admin-cornsilk), var(--admin-blanched));
+  border-radius: 20px;
+  border: 3px dashed var(--admin-tan);
+  margin-top: 20px;
+}
+
+.AdminDashboard-emptyIcon {
+  font-size: 5rem;
+  color: var(--admin-burlywood);
+  margin-bottom: 25px;
+  opacity: 0.6;
+  animation: AdminDashboard-pulse 2s infinite;
+}
+
+@keyframes AdminDashboard-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.AdminDashboard-emptyText {
+  font-size: 1.3rem;
+  color: var(--admin-sienna);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.AdminDashboard-errorMessage {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 25px;
+  background: linear-gradient(135deg, var(--admin-rosy) 0%, var(--admin-sandy) 50%, var(--admin-rosy) 100%);
+  border: 3px solid var(--admin-maroon);
+  border-radius: 14px;
+  color: var(--admin-maroon);
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 20px rgba(128, 0, 0, 0.25);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  .AdminDashboard-container {
+    padding: 15px;
+    background: linear-gradient(180deg, var(--admin-cornsilk) 0%, var(--admin-blanched) 100%);
+  }
+  
+  .AdminDashboard-title {
+    font-size: 1.9rem;
+  }
+  
+  .AdminDashboard-statsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .AdminDashboard-statCard {
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  .AdminDashboard-tabs {
+    flex-direction: column;
+    background: var(--admin-bisque);
+  }
+  
+  .AdminDashboard-tabBtn {
+    border-radius: 10px;
+    border-bottom: 2px solid var(--admin-burlywood);
+    width: 100%;
+    top: 0;
+  }
+  
+  .AdminDashboard-tabBtn--active {
+    border-bottom: 3px solid var(--admin-saddle);
+  }
+  
+  .AdminDashboard-tabContent {
+    border-radius: 16px;
+    padding: 20px;
+  }
+  
+  .AdminDashboard-formGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .AdminDashboard-newAuthorForm {
+    grid-template-columns: 1fr;
+  }
+  
+  .AdminDashboard-dataTable {
+    font-size: 0.85rem;
+    border-width: 2px;
+  }
+  
+  .AdminDashboard-dataTableHeader,
+  .AdminDashboard-dataTableCell {
+    padding: 12px 8px;
+  }
+  
+  .AdminDashboard-actionBtn {
+    width: 34px;
+    height: 34px;
+    margin-right: 6px;
+  }
+  
+  .AdminDashboard-userDetailsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .AdminDashboard-branchesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .AdminDashboard-modalContent {
+    width: 95%;
+    margin: 10px;
+    border-width: 3px;
+  }
+  
+  .AdminDashboard-searchBar {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .AdminDashboard-searchClear {
+    right: 20px;
+    top: auto;
+    bottom: 20px;
+    transform: none;
+  }
+}
+
+/* ============================================
+   SCROLLBAR - полный градиент
+   ============================================ */
+.AdminDashboard-container ::-webkit-scrollbar {
+  width: 12px;
+}
+
+.AdminDashboard-container ::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, var(--admin-cornsilk), var(--admin-blanched));
+  border-radius: 6px;
+  border: 1px solid var(--admin-burlywood);
+}
+
+.AdminDashboard-container ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--admin-burlywood) 0%, var(--admin-saddle) 50%, var(--admin-chocolate) 100%);
+  border-radius: 6px;
+  border: 2px solid var(--admin-cornsilk);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+}
+
+.AdminDashboard-container ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--admin-tan) 0%, var(--admin-saddle) 50%, var(--admin-maroon) 100%);
+  border-color: var(--admin-blanched);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes AdminDashboard-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Hover эффекты для всего */
+.AdminDashboard-container * {
+  transition-property: background-color, border-color, color, transform, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
