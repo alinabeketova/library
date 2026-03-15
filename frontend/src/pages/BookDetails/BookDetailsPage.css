@@ -1,0 +1,581 @@
+/* ============================================
+   BOOK DETAILS PAGE - ВСЕ 17 ЦВЕТОВ ПАЛИТРЫ
+   ============================================ */
+
+:root {
+  --bdp-cornsilk: #FFF8DC;
+  --bdp-blanched: #FFEBCD;
+  --bdp-bisque: #FFE4C4;
+  --bdp-navajo: #FFDEAD;
+  --bdp-wheat: #F5DEB3;
+  --bdp-burlywood: #DEB887;
+  --bdp-tan: #D2B48C;
+  --bdp-rosy: #BC8F8F;
+  --bdp-sandy: #F4A460;
+  --bdp-goldenrod: #DAA520;
+  --bdp-dark-golden: #B8860B;
+  --bdp-peru: #CD853F;
+  --bdp-chocolate: #D2691E;
+  --bdp-saddle: #8B4513;
+  --bdp-sienna: #A0522D;
+  --bdp-brown: #A52A2A;
+  --bdp-maroon: #800000;
+}
+
+/* ============================================
+   MAIN CONTAINER - Cornsilk/BlanchedAlmond
+   ============================================ */
+.BookDetailsPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bdp-cornsilk) 0%, var(--bdp-blanched) 50%, var(--bdp-bisque) 100%);
+  padding: 40px 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: var(--bdp-saddle);
+  position: relative;
+}
+
+/* ============================================
+   BACK LINK - Peru/SaddleBrown
+   ============================================ */
+.BookDetailsPage-backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--bdp-peru);
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, var(--bdp-wheat) 0%, var(--bdp-navajo) 100%);
+  border-radius: 10px;
+  border: 2px solid var(--bdp-burlywood);
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(139, 69, 19, 0.15);
+}
+
+.BookDetailsPage-backLink:hover {
+  background: linear-gradient(135deg, var(--bdp-navajo) 0%, var(--bdp-sandy) 100%);
+  color: var(--bdp-saddle);
+  transform: translateX(-5px);
+  border-color: var(--bdp-sandy);
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.25);
+}
+
+/* ============================================
+   LOADING STATE - Wheat/Goldenrod
+   ============================================ */
+.BookDetailsPage-loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 25px;
+  background: linear-gradient(145deg, var(--bdp-wheat) 0%, var(--bdp-navajo) 50%, var(--bdp-bisque) 100%);
+  border-radius: 20px;
+  border: 3px dashed var(--bdp-burlywood);
+  padding: 60px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.BookDetailsPage-loadingSpinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid var(--bdp-burlywood);
+  border-top-color: var(--bdp-goldenrod);
+  border-radius: 50%;
+  animation: BookDetailsPage-spin 1s linear infinite;
+  box-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
+}
+
+@keyframes BookDetailsPage-spin {
+  to { transform: rotate(360deg); }
+}
+
+.BookDetailsPage-loadingText {
+  color: var(--bdp-sienna);
+  font-size: 1.3rem;
+  font-style: italic;
+  text-shadow: 1px 1px 2px var(--bdp-cornsilk);
+}
+
+/* ============================================
+   ERROR CONTAINER - RosyBrown/SandyBrown
+   ============================================ */
+.BookDetailsPage-errorContainer {
+  text-align: center;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 50px;
+  background: linear-gradient(145deg, var(--bdp-rosy) 0%, var(--bdp-sandy) 50%, var(--bdp-goldenrod) 100%);
+  border-radius: 20px;
+  border: 4px solid var(--bdp-brown);
+  box-shadow: 0 10px 40px rgba(165, 42, 42, 0.3);
+  animation: BookDetailsPage-shake 0.5s ease;
+}
+
+@keyframes BookDetailsPage-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.BookDetailsPage-errorTitle {
+  font-size: 2rem;
+  color: var(--bdp-maroon);
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px var(--bdp-navajo);
+}
+
+.BookDetailsPage-errorText {
+  color: var(--bdp-saddle);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.BookDetailsPage-errorHint {
+  color: var(--bdp-sienna);
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+  font-style: italic;
+  background: var(--bdp-cornsilk);
+  padding: 10px 15px;
+  border-radius: 8px;
+  border-left: 4px solid var(--bdp-peru);
+}
+
+.BookDetailsPage-errorActions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   BUTTONS - все цвета
+   ============================================ */
+.BookDetailsPage-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid var(--bdp-burlywood);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  box-shadow: 0 3px 10px rgba(139, 69, 19, 0.2);
+}
+
+/* Primary - SaddleBrown/Chocolate/Peru */
+.BookDetailsPage-btn--primary {
+  background: linear-gradient(135deg, var(--bdp-saddle) 0%, var(--bdp-chocolate) 50%, var(--bdp-peru) 100%);
+  color: var(--bdp-cornsilk);
+  border-color: var(--bdp-saddle);
+}
+
+.BookDetailsPage-btn--primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--bdp-chocolate) 0%, var(--bdp-peru) 50%, var(--bdp-sandy) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+  color: white;
+}
+
+/* Secondary - Tan/Burlywood */
+.BookDetailsPage-btn--secondary {
+  background: linear-gradient(135deg, var(--bdp-tan) 0%, var(--bdp-burlywood) 100%);
+  color: var(--bdp-saddle);
+  border-color: var(--bdp-burlywood);
+}
+
+.BookDetailsPage-btn--secondary:hover {
+  background: linear-gradient(135deg, var(--bdp-burlywood) 0%, var(--bdp-wheat) 100%);
+  color: var(--bdp-sienna);
+  transform: translateY(-3px);
+}
+
+/* Large button */
+.BookDetailsPage-btn--large {
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border-width: 3px;
+}
+
+.BookDetailsPage-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ============================================
+   MAIN CONTAINER - Bisque/NavajoWhite
+   ============================================ */
+.BookDetailsPage-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: linear-gradient(145deg, var(--bdp-bisque) 0%, var(--bdp-navajo) 50%, var(--bdp-wheat) 100%);
+  border-radius: 24px;
+  border: 4px solid var(--bdp-burlywood);
+  overflow: hidden;
+  box-shadow: 0 10px 50px rgba(139, 69, 19, 0.2);
+}
+
+/* ============================================
+   MAIN INFO SECTION - Cornsilk/Blanched
+   ============================================ */
+.BookDetailsPage-mainInfo {
+  padding: 40px;
+  background: linear-gradient(180deg, var(--bdp-cornsilk) 0%, var(--bdp-blanched) 100%);
+  border-bottom: 4px solid var(--bdp-burlywood);
+  text-align: center;
+}
+
+.BookDetailsPage-title {
+  font-size: 2.5rem;
+  color: var(--bdp-maroon);
+  margin-bottom: 15px;
+  line-height: 1.3;
+  text-shadow: 2px 2px 4px var(--bdp-navajo);
+  border-bottom: 3px solid var(--bdp-burlywood);
+  padding-bottom: 20px;
+}
+
+.BookDetailsPage-authors {
+  font-size: 1.5rem;
+  color: var(--bdp-sienna);
+  margin-bottom: 30px;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* ============================================
+   AVAILABILITY - разные статусы
+   ============================================ */
+.BookDetailsPage-availability {
+  margin: 30px 0;
+  padding: 25px;
+  background: linear-gradient(145deg, var(--bdp-wheat) 0%, var(--bdp-navajo) 100%);
+  border-radius: 16px;
+  border: 3px solid var(--bdp-burlywood);
+}
+
+.BookDetailsPage-availabilityStatus {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Available - Goldenrod/DarkGoldenRod */
+.BookDetailsPage-availabilityStatus--available {
+  background: linear-gradient(135deg, var(--bdp-goldenrod) 0%, var(--bdp-dark-golden) 100%);
+  color: var(--bdp-maroon);
+  border: 2px solid var(--bdp-dark-golden);
+}
+
+/* Unavailable - RosyBrown/Brown */
+.BookDetailsPage-availabilityStatus--unavailable {
+  background: linear-gradient(135deg, var(--bdp-rosy) 0%, var(--bdp-brown) 100%);
+  color: var(--bdp-cornsilk);
+  border: 2px solid var(--bdp-maroon);
+}
+
+.BookDetailsPage-copiesInfo {
+  color: var(--bdp-saddle);
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.BookDetailsPage-copiesInfo strong {
+  color: var(--bdp-chocolate);
+  font-size: 1.3rem;
+}
+
+.BookDetailsPage-issuedInfo {
+  color: var(--bdp-sienna);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+/* ============================================
+   RESERVATION MESSAGES - success/error
+   ============================================ */
+.BookDetailsPage-reservationMessage {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 25px 0;
+  font-weight: 600;
+  animation: BookDetailsPage-slideIn 0.4s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+@keyframes BookDetailsPage-slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Success - Goldenrod/NavajoWhite */
+.BookDetailsPage-reservationMessage--success {
+  background: linear-gradient(135deg, var(--bdp-goldenrod) 0%, var(--bdp-navajo) 100%);
+  color: var(--bdp-saddle);
+  border: 3px solid var(--bdp-dark-golden);
+}
+
+/* Error - RosyBrown/SandyBrown */
+.BookDetailsPage-reservationMessage--error {
+  background: linear-gradient(135deg, var(--bdp-rosy) 0%, var(--bdp-sandy) 100%);
+  color: var(--bdp-maroon);
+  border: 3px solid var(--bdp-brown);
+}
+
+.BookDetailsPage-reservationText {
+  flex: 1;
+}
+
+/* ============================================
+   SUCCESS HINT - DarkGoldenRod/Goldenrod
+   ============================================ */
+.BookDetailsPage-successHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 25px;
+  background: linear-gradient(135deg, var(--bdp-dark-golden) 0%, var(--bdp-goldenrod) 100%);
+  color: var(--bdp-cornsilk);
+  border-radius: 25px;
+  font-weight: bold;
+  margin: 20px 0;
+  border: 2px solid var(--bdp-dark-golden);
+  box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+  animation: BookDetailsPage-pulse 2s infinite;
+}
+
+@keyframes BookDetailsPage-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* ============================================
+   AUTH HINT - Tan/Burlywood
+   ============================================ */
+.BookDetailsPage-authHint {
+  margin: 25px 0;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--bdp-tan) 0%, var(--bdp-burlywood) 100%);
+  border-radius: 12px;
+  border: 2px dashed var(--bdp-saddle);
+}
+
+.BookDetailsPage-hintText {
+  color: var(--bdp-saddle);
+  margin: 0;
+  font-size: 1rem;
+}
+
+.BookDetailsPage-hintText i {
+  color: var(--bdp-peru);
+  margin-right: 8px;
+}
+
+/* ============================================
+   DETAILED INFO - все светлые тона
+   ============================================ */
+.BookDetailsPage-detailedInfo {
+  padding: 40px;
+  background: linear-gradient(180deg, var(--bdp-blanched) 0%, var(--bdp-bisque) 50%, var(--bdp-navajo) 100%);
+}
+
+.BookDetailsPage-infoSection {
+  margin-bottom: 35px;
+}
+
+.BookDetailsPage-infoSection:last-child {
+  margin-bottom: 0;
+}
+
+.BookDetailsPage-sectionTitle {
+  font-size: 1.4rem;
+  color: var(--bdp-saddle);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--bdp-burlywood);
+}
+
+.BookDetailsPage-sectionTitle i {
+  color: var(--bdp-peru);
+  font-size: 1.2rem;
+}
+
+/* ============================================
+   INFO TABLE - Cornsilk/Wheat
+   ============================================ */
+.BookDetailsPage-infoTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--bdp-cornsilk);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid var(--bdp-burlywood);
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+}
+
+.BookDetailsPage-tableBody {
+  background: transparent;
+}
+
+.BookDetailsPage-tableRow {
+  transition: all 0.2s ease;
+  border-bottom: 1px solid var(--bdp-burlywood);
+}
+
+.BookDetailsPage-tableRow:last-child {
+  border-bottom: none;
+}
+
+.BookDetailsPage-tableRow:nth-child(even) {
+  background: linear-gradient(90deg, var(--bdp-cornsilk), var(--bdp-blanched));
+}
+
+.BookDetailsPage-tableRow:nth-child(odd) {
+  background: linear-gradient(90deg, var(--bdp-blanched), var(--bdp-cornsilk));
+}
+
+.BookDetailsPage-tableRow:hover {
+  background: linear-gradient(90deg, var(--bdp-navajo), var(--bdp-wheat), var(--bdp-navajo)) !important;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+}
+
+.BookDetailsPage-tableCell {
+  padding: 16px 20px;
+  color: var(--bdp-saddle);
+}
+
+.BookDetailsPage-tableCell--label {
+  font-weight: 700;
+  color: var(--bdp-sienna);
+  width: 40%;
+  border-right: 2px solid var(--bdp-burlywood);
+  background: linear-gradient(90deg, var(--bdp-wheat), var(--bdp-navajo));
+}
+
+.BookDetailsPage-tableCell--value {
+  color: var(--bdp-saddle);
+  font-weight: 500;
+}
+
+/* ============================================
+   FACULTIES - разноцветные бейджи
+   ============================================ */
+.BookDetailsPage-facultiesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.BookDetailsPage-facultyBadge {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  color: var(--bdp-maroon);
+  border: 2px solid var(--bdp-burlywood);
+  box-shadow: 0 3px 10px rgba(139, 69, 19, 0.15);
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+.BookDetailsPage-facultyBadge:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.25);
+  border-color: var(--bdp-saddle);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  .BookDetailsPage {
+    padding: 20px 15px;
+  }
+  
+  .BookDetailsPage-title {
+    font-size: 1.8rem;
+  }
+  
+  .BookDetailsPage-authors {
+    font-size: 1.2rem;
+  }
+  
+  .BookDetailsPage-mainInfo,
+  .BookDetailsPage-detailedInfo {
+    padding: 25px;
+  }
+  
+  .BookDetailsPage-tableCell {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .BookDetailsPage-tableCell--label {
+    width: 45%;
+  }
+  
+  .BookDetailsPage-btn--large {
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
+  
+  .BookDetailsPage-errorContainer {
+    padding: 30px 20px;
+    margin: 20px auto;
+  }
+  
+  .BookDetailsPage-errorActions {
+    flex-direction: column;
+  }
+  
+  .BookDetailsPage-facultyBadge {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+/* ============================================
+   SCROLLBAR - полный градиент
+   ============================================ */
+.BookDetailsPage ::-webkit-scrollbar {
+  width: 12px;
+}
+
+.BookDetailsPage ::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, var(--bdp-cornsilk), var(--bdp-blanched));
+  border-radius: 6px;
+  border: 1px solid var(--bdp-burlywood);
+}
+
+.BookDetailsPage ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--bdp-burlywood) 0%, var(--bdp-saddle) 50%, var(--bdp-chocolate) 100%);
+  border-radius: 6px;
+  border: 2px solid var(--bdp-cornsilk);
+}
+
+.BookDetailsPage ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--bdp-tan) 0%, var(--bdp-saddle) 50%, var(--bdp-maroon) 100%);
+}
