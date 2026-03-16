@@ -1,0 +1,762 @@
+/* ============================================
+   LIBRARIAN DASHBOARD - ВСЕ 17 ЦВЕТОВ ПАЛИТРЫ
+   ============================================ */
+
+:root {
+  --ld-cornsilk: #FFF8DC;
+  --ld-blanched: #FFEBCD;
+  --ld-bisque: #FFE4C4;
+  --ld-navajo: #FFDEAD;
+  --ld-wheat: #F5DEB3;
+  --ld-burlywood: #DEB887;
+  --ld-tan: #D2B48C;
+  --ld-rosy: #BC8F8F;
+  --ld-sandy: #F4A460;
+  --ld-goldenrod: #DAA520;
+  --ld-dark-golden: #B8860B;
+  --ld-peru: #CD853F;
+  --ld-chocolate: #D2691E;
+  --ld-saddle: #8B4513;
+  --ld-sienna: #A0522D;
+  --ld-brown: #A52A2A;
+  --ld-maroon: #800000;
+}
+
+/* ============================================
+   MAIN CONTAINER - Cornsilk/BlanchedAlmond/Bisque
+   ============================================ */
+.LibrarianDashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--ld-cornsilk) 0%, var(--ld-blanched) 50%, var(--ld-bisque) 100%);
+  padding: 40px 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: var(--ld-saddle);
+}
+
+.LibrarianDashboard-title {
+  font-size: 2.5rem;
+  color: var(--ld-maroon);
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px var(--ld-navajo);
+  border-bottom: 4px solid var(--ld-burlywood);
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.LibrarianDashboard-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--ld-sienna), var(--ld-brown), var(--ld-sienna), transparent);
+}
+
+/* ============================================
+   TABS - полный градиент коричневых
+   ============================================ */
+.LibrarianDashboard-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  background: linear-gradient(180deg, var(--ld-blanched) 0%, var(--ld-bisque) 100%);
+  padding: 20px;
+  border-radius: 16px 16px 0 0;
+  border-bottom: 4px solid var(--ld-burlywood);
+  flex-wrap: wrap;
+}
+
+.LibrarianDashboard-tabBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, var(--ld-wheat) 0%, var(--ld-tan) 100%);
+  border: 3px solid var(--ld-burlywood);
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  color: var(--ld-saddle);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  position: relative;
+  top: 4px;
+  box-shadow: 0 -3px 10px rgba(139, 69, 19, 0.1);
+}
+
+.LibrarianDashboard-tabBtn:hover {
+  background: linear-gradient(135deg, var(--ld-navajo) 0%, var(--ld-wheat) 100%);
+  border-color: var(--ld-sandy);
+  color: var(--ld-sienna);
+  transform: translateY(-2px);
+}
+
+.LibrarianDashboard-tabBtn--active {
+  background: linear-gradient(135deg, var(--ld-saddle) 0%, var(--ld-chocolate) 50%, var(--ld-peru) 100%);
+  color: var(--ld-cornsilk);
+  border-color: var(--ld-saddle);
+  top: 0;
+  padding-bottom: 18px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  box-shadow: 0 -5px 15px rgba(139, 69, 19, 0.3);
+}
+
+.LibrarianDashboard-tabContent {
+  background: linear-gradient(180deg, var(--ld-cornsilk) 0%, var(--ld-blanched) 50%, var(--ld-navajo) 100%);
+  border: 4px solid var(--ld-burlywood);
+  border-radius: 0 16px 16px 16px;
+  padding: 35px;
+  box-shadow: 0 10px 40px rgba(139, 69, 19, 0.15);
+  min-height: 500px;
+}
+
+/* ============================================
+   MANAGEMENT SECTION - анимация
+   ============================================ */
+.LibrarianDashboard-managementSection {
+  animation: LibrarianDashboard-fadeIn 0.4s ease;
+}
+
+@keyframes LibrarianDashboard-fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   SECTION HEADER - Wheat/NavajoWhite
+   ============================================ */
+.LibrarianDashboard-sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 20px;
+  background: linear-gradient(90deg, var(--ld-wheat), var(--ld-navajo), var(--ld-wheat));
+  border-radius: 12px;
+  border: 2px dashed var(--ld-tan);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.LibrarianDashboard-sectionTitle {
+  font-size: 1.8rem;
+  color: var(--ld-sienna);
+  margin: 0;
+  border-left: 5px solid var(--ld-chocolate);
+  padding-left: 15px;
+  text-shadow: 1px 1px 2px var(--ld-navajo);
+}
+
+/* ============================================
+   BUTTONS - все цвета
+   ============================================ */
+.LibrarianDashboard-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: 2px solid var(--ld-burlywood);
+  background: linear-gradient(135deg, var(--ld-wheat) 0%, var(--ld-tan) 100%);
+  color: var(--ld-saddle);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  font-size: 1rem;
+  box-shadow: 0 3px 10px rgba(139, 69, 19, 0.15);
+}
+
+.LibrarianDashboard-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.25);
+}
+
+.LibrarianDashboard-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Primary - SaddleBrown/Chocolate/Peru */
+.LibrarianDashboard-btn--primary {
+  background: linear-gradient(135deg, var(--ld-saddle) 0%, var(--ld-chocolate) 50%, var(--ld-peru) 100%);
+  color: var(--ld-cornsilk);
+  border-color: var(--ld-saddle);
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+}
+
+.LibrarianDashboard-btn--primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--ld-chocolate) 0%, var(--ld-peru) 50%, var(--ld-sandy) 100%);
+  color: white;
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+}
+
+/* Secondary - Tan/Burlywood */
+.LibrarianDashboard-btn--secondary {
+  background: linear-gradient(135deg, var(--ld-tan) 0%, var(--ld-burlywood) 100%);
+  color: var(--ld-saddle);
+  border-color: var(--ld-burlywood);
+}
+
+.LibrarianDashboard-btn--secondary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--ld-burlywood) 0%, var(--ld-wheat) 100%);
+  color: var(--ld-sienna);
+}
+
+/* Action buttons */
+.LibrarianDashboard-actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.LibrarianDashboard-actionBtn--cancel {
+  background: linear-gradient(135deg, var(--ld-rosy) 0%, var(--ld-brown) 100%);
+  color: var(--ld-cornsilk);
+  border-color: var(--ld-maroon);
+}
+
+.LibrarianDashboard-actionBtn--cancel:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--ld-brown) 0%, var(--ld-maroon) 100%);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+}
+
+.LibrarianDashboard-actionBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   LOADING & ERROR - SandyBrown/RosyBrown
+   ============================================ */
+.LibrarianDashboard-loading {
+  text-align: center;
+  padding: 60px;
+  color: var(--ld-sienna);
+  font-size: 1.3rem;
+  background: linear-gradient(145deg, var(--ld-wheat), var(--ld-navajo));
+  border-radius: 16px;
+  border: 3px dashed var(--ld-burlywood);
+  margin: 20px;
+}
+
+.LibrarianDashboard-error {
+  text-align: center;
+  padding: 40px;
+  color: var(--ld-maroon);
+  font-size: 1.2rem;
+  background: linear-gradient(145deg, var(--ld-rosy), var(--ld-sandy));
+  border-radius: 16px;
+  border: 3px solid var(--ld-maroon);
+  margin: 20px;
+  font-weight: 600;
+}
+
+/* ============================================
+   SUCCESS MESSAGE - Goldenrod/DarkGoldenRod
+   ============================================ */
+.LibrarianDashboard-successMessage {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 25px;
+  background: linear-gradient(135deg, var(--ld-goldenrod) 0%, var(--ld-dark-golden) 100%);
+  color: var(--ld-maroon);
+  border-radius: 12px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  border: 3px solid var(--ld-dark-golden);
+  box-shadow: 0 5px 20px rgba(184, 134, 11, 0.3);
+  animation: LibrarianDashboard-slideIn 0.4s ease;
+}
+
+@keyframes LibrarianDashboard-slideIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ============================================
+   SEARCH BAR - Bisque/Tan
+   ============================================ */
+.LibrarianDashboard-searchBar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding: 18px;
+  background: linear-gradient(145deg, var(--ld-bisque) 0%, var(--ld-tan) 100%);
+  border-radius: 14px;
+  border: 3px solid var(--ld-burlywood);
+  position: relative;
+}
+
+.LibrarianDashboard-searchIcon {
+  color: var(--ld-sienna);
+  font-size: 1.2rem;
+}
+
+.LibrarianDashboard-searchInput {
+  flex: 1;
+  padding: 14px 18px;
+  border: 2px solid var(--ld-burlywood);
+  border-radius: 10px;
+  background: var(--ld-cornsilk);
+  color: var(--ld-saddle);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.LibrarianDashboard-searchInput:focus {
+  outline: none;
+  border-color: var(--ld-sandy);
+  box-shadow: 0 0 0 4px rgba(244, 164, 96, 0.2);
+}
+
+.LibrarianDashboard-searchClear {
+  background: linear-gradient(135deg, var(--ld-rosy) 0%, var(--ld-brown) 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.LibrarianDashboard-searchClear:hover {
+  transform: scale(1.1) rotate(90deg);
+  background: linear-gradient(135deg, var(--ld-brown) 0%, var(--ld-maroon) 100%);
+}
+
+.LibrarianDashboard-searchResultsCount {
+  color: var(--ld-sienna);
+  font-weight: 600;
+  background: var(--ld-wheat);
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 2px solid var(--ld-burlywood);
+}
+
+/* ============================================
+   FORMS - все светлые тона
+   ============================================ */
+.LibrarianDashboard-issueForm,
+.LibrarianDashboard-returnForm {
+  background: linear-gradient(145deg, var(--ld-blanched) 0%, var(--ld-bisque) 50%, var(--ld-navajo) 100%);
+  border: 4px solid var(--ld-burlywood);
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 30px rgba(139, 69, 19, 0.15);
+}
+
+.LibrarianDashboard-formTitle {
+  font-size: 1.4rem;
+  color: var(--ld-saddle);
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid var(--ld-burlywood);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.LibrarianDashboard-formRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.LibrarianDashboard-formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.LibrarianDashboard-formLabel {
+  font-weight: 700;
+  color: var(--ld-sienna);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, var(--ld-wheat), transparent);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border-left: 3px solid var(--ld-peru);
+}
+
+.LibrarianDashboard-formSelect,
+.LibrarianDashboard-formInput {
+  padding: 14px 18px;
+  border: 2px solid var(--ld-burlywood);
+  border-radius: 10px;
+  background: var(--ld-cornsilk);
+  color: var(--ld-saddle);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(139, 69, 19, 0.08);
+}
+
+.LibrarianDashboard-formSelect:focus,
+.LibrarianDashboard-formInput:focus {
+  outline: none;
+  border-color: var(--ld-sandy);
+  box-shadow: 0 0 0 4px rgba(244, 164, 96, 0.2), inset 0 2px 4px rgba(139, 69, 19, 0.05);
+  background: var(--ld-blanched);
+}
+
+.LibrarianDashboard-formInput--disabled {
+  background: linear-gradient(180deg, var(--ld-tan) 0%, var(--ld-burlywood) 100%);
+  color: var(--ld-sienna);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.LibrarianDashboard-inputHint {
+  color: var(--ld-peru);
+  font-size: 0.85rem;
+  font-style: italic;
+  background: var(--ld-wheat);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 3px solid var(--ld-goldenrod);
+}
+
+/* ============================================
+   LOANS TABS - внутренние табы
+   ============================================ */
+.LibrarianDashboard-loansTabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  border-bottom: 3px solid var(--ld-burlywood);
+  padding-bottom: 0;
+}
+
+/* ============================================
+   TABLES - полный стиль
+   ============================================ */
+.LibrarianDashboard-reservationsTable,
+.LibrarianDashboard-loansTable,
+.LibrarianDashboard-activeLoansList {
+  margin-top: 25px;
+}
+
+.LibrarianDashboard-tableTitle {
+  font-size: 1.3rem;
+  color: var(--ld-saddle);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--ld-burlywood);
+}
+
+.LibrarianDashboard-filterIndicator {
+  color: var(--ld-peru);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.LibrarianDashboard-dataTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--ld-cornsilk);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 4px solid var(--ld-burlywood);
+  box-shadow: 0 6px 25px rgba(139, 69, 19, 0.12);
+}
+
+.LibrarianDashboard-tableHead {
+  background: linear-gradient(180deg, var(--ld-saddle) 0%, var(--ld-chocolate) 50%, var(--ld-sienna) 100%);
+}
+
+.LibrarianDashboard-tableHeader {
+  padding: 18px 15px;
+  text-align: left;
+  font-weight: 700;
+  border-bottom: 4px solid var(--ld-burlywood);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.LibrarianDashboard-tableBody {
+  background: transparent;
+}
+
+.LibrarianDashboard-tableRow {
+  transition: all 0.25s ease;
+  border-bottom: 1px solid var(--ld-burlywood);
+}
+
+.LibrarianDashboard-tableRow:last-child {
+  border-bottom: none;
+}
+
+.LibrarianDashboard-tableRow:nth-child(even) {
+  background: linear-gradient(90deg, var(--ld-cornsilk), var(--ld-blanched));
+}
+
+.LibrarianDashboard-tableRow:nth-child(odd) {
+  background: linear-gradient(90deg, var(--ld-blanched), var(--ld-cornsilk));
+}
+
+.LibrarianDashboard-tableRow:hover {
+  background: linear-gradient(90deg, var(--ld-navajo), var(--ld-wheat), var(--ld-navajo)) !important;
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.2);
+  z-index: 10;
+  position: relative;
+}
+
+/* Статусные строки */
+.LibrarianDashboard-tableRow--overdue {
+  background: linear-gradient(90deg, var(--ld-rosy), var(--ld-sandy)) !important;
+}
+
+.LibrarianDashboard-tableRow--active {
+  background: linear-gradient(90deg, var(--ld-navajo), var(--ld-wheat)) !important;
+}
+
+.LibrarianDashboard-tableRow--returned {
+  background: linear-gradient(90deg, var(--ld-wheat), var(--ld-tan)) !important;
+  opacity: 0.8;
+}
+
+.LibrarianDashboard-tableRow--expired {
+  background: linear-gradient(90deg, var(--ld-rosy), var(--ld-sandy)) !important;
+  opacity: 0.9;
+}
+
+.LibrarianDashboard-tableCell {
+  padding: 16px 15px;
+  color: var(--ld-saddle);
+  font-weight: 500;
+}
+
+/* ============================================
+   STATUS BADGES - все цвета
+   ============================================ */
+.LibrarianDashboard-statusBadge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: 2px solid;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* Expired - RosyBrown/Brown */
+.LibrarianDashboard-statusBadge--expired {
+  background: linear-gradient(135deg, var(--ld-rosy) 0%, var(--ld-brown) 100%);
+  color: var(--ld-cornsilk);
+  border-color: var(--ld-maroon);
+}
+
+/* Today - SandyBrown/Peru */
+.LibrarianDashboard-statusBadge--today {
+  background: linear-gradient(135deg, var(--ld-sandy) 0%, var(--ld-peru) 100%);
+  color: var(--ld-maroon);
+  border-color: var(--ld-chocolate);
+  animation: LibrarianDashboard-pulse 2s infinite;
+}
+
+/* Reserved - Goldenrod/DarkGoldenRod */
+.LibrarianDashboard-statusBadge--reserved {
+  background: linear-gradient(135deg, var(--ld-goldenrod) 0%, var(--ld-dark-golden) 100%);
+  color: var(--ld-maroon);
+  border-color: var(--ld-dark-golden);
+}
+
+/* Active - NavajoWhite/Wheat */
+.LibrarianDashboard-statusBadge--active {
+  background: linear-gradient(135deg, var(--ld-navajo) 0%, var(--ld-wheat) 100%);
+  color: var(--ld-saddle);
+  border-color: var(--ld-burlywood);
+}
+
+/* Overdue - RosyBrown */
+.LibrarianDashboard-statusBadge--overdue {
+  background: linear-gradient(135deg, var(--ld-rosy) 0%, var(--ld-brown) 100%);
+  color: var(--ld-cornsilk);
+  border-color: var(--ld-maroon);
+}
+
+/* Returned - Tan/Burlywood */
+.LibrarianDashboard-statusBadge--returned {
+  background: linear-gradient(135deg, var(--ld-tan) 0%, var(--ld-burlywood) 100%);
+  color: var(--ld-saddle);
+  border-color: var(--ld-burlywood);
+}
+
+@keyframes LibrarianDashboard-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* ============================================
+   TEXT STYLES
+   ============================================ */
+.LibrarianDashboard-expiredLabel {
+  color: var(--ld-maroon);
+  font-weight: bold;
+  background: var(--ld-rosy);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-right: 5px;
+  font-size: 0.8rem;
+}
+
+.LibrarianDashboard-expiredText {
+  color: var(--ld-maroon);
+  font-weight: 700;
+}
+
+.LibrarianDashboard-activeText {
+  color: var(--ld-sienna);
+  font-weight: 600;
+}
+
+.LibrarianDashboard-overdueDays {
+  color: var(--ld-maroon);
+  font-weight: bold;
+  background: var(--ld-rosy);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.LibrarianDashboard-normalDays {
+  color: var(--ld-sienna);
+  font-weight: 600;
+  background: var(--ld-wheat);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* ============================================
+   EMPTY MESSAGE
+   ============================================ */
+.LibrarianDashboard-emptyMessage {
+  text-align: center;
+  padding: 50px;
+  color: var(--ld-sienna);
+  font-size: 1.2rem;
+  font-style: italic;
+  background: linear-gradient(145deg, var(--ld-wheat), var(--ld-navajo));
+  border-radius: 16px;
+  border: 3px dashed var(--ld-burlywood);
+  margin-top: 20px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  .LibrarianDashboard {
+    padding: 20px 15px;
+  }
+  
+  .LibrarianDashboard-title {
+    font-size: 1.9rem;
+  }
+  
+  .LibrarianDashboard-tabs {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .LibrarianDashboard-tabBtn {
+    border-radius: 10px;
+    border-bottom: 2px solid var(--ld-burlywood);
+    width: 100%;
+    top: 0;
+  }
+  
+  .LibrarianDashboard-tabBtn--active {
+    border-bottom: 3px solid var(--ld-saddle);
+  }
+  
+  .LibrarianDashboard-tabContent {
+    padding: 20px;
+    border-radius: 16px;
+  }
+  
+  .LibrarianDashboard-formRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .LibrarianDashboard-dataTable {
+    font-size: 0.85rem;
+  }
+  
+  .LibrarianDashboard-tableHeader,
+  .LibrarianDashboard-tableCell {
+    padding: 12px 10px;
+  }
+  
+  .LibrarianDashboard-sectionHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .LibrarianDashboard-searchBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .LibrarianDashboard-searchResultsCount {
+    text-align: center;
+  }
+}
+
+/* ============================================
+   SCROLLBAR - полный градиент
+   ============================================ */
+.LibrarianDashboard ::-webkit-scrollbar {
+  width: 12px;
+}
+
+.LibrarianDashboard ::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, var(--ld-cornsilk), var(--ld-blanched));
+  border-radius: 6px;
+  border: 1px solid var(--ld-burlywood);
+}
+
+.LibrarianDashboard ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--ld-burlywood) 0%, var(--ld-saddle) 50%, var(--ld-chocolate) 100%);
+  border-radius: 6px;
+  border: 2px solid var(--ld-cornsilk);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+}
+
+.LibrarianDashboard ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--ld-tan) 0%, var(--ld-saddle) 50%, var(--ld-maroon) 100%);
+  border-color: var(--ld-blanched);
+}
