@@ -1,0 +1,475 @@
+/* ============================================
+   REGISTRATION - ВСЕ 17 ЦВЕТОВ ПАЛИТРЫ
+   ============================================ */
+
+:root {
+  --reg-cornsilk: #FFF8DC;
+  --reg-blanched: #FFEBCD;
+  --reg-bisque: #FFE4C4;
+  --reg-navajo: #FFDEAD;
+  --reg-wheat: #F5DEB3;
+  --reg-burlywood: #DEB887;
+  --reg-tan: #D2B48C;
+  --reg-rosy: #BC8F8F;
+  --reg-sandy: #F4A460;
+  --reg-goldenrod: #DAA520;
+  --reg-dark-golden: #B8860B;
+  --reg-peru: #CD853F;
+  --reg-chocolate: #D2691E;
+  --reg-saddle: #8B4513;
+  --reg-sienna: #A0522D;
+  --reg-brown: #A52A2A;
+  --reg-maroon: #800000;
+}
+
+/* ============================================
+   MAIN CONTAINER - Cornsilk/BlanchedAlmond
+   ============================================ */
+.Registration {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--reg-cornsilk) 0%, var(--reg-blanched) 50%, var(--reg-bisque) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* ============================================
+   CARD - полный градиент
+   ============================================ */
+.Registration-card {
+  width: 100%;
+  max-width: 600px;
+  background: linear-gradient(145deg, var(--reg-cornsilk) 0%, var(--reg-blanched) 50%, var(--reg-navajo) 100%);
+  border-radius: 24px;
+  border: 4px solid var(--reg-burlywood);
+  box-shadow: 0 15px 50px rgba(139, 69, 19, 0.2);
+  overflow: hidden;
+  animation: Registration-fadeIn 0.5s ease;
+}
+
+@keyframes Registration-fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   HEADER - SaddleBrown/Maroon
+   ============================================ */
+.Registration-header {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, var(--reg-saddle) 0%, var(--reg-chocolate) 50%, var(--reg-peru) 100%);
+  color: var(--reg-cornsilk);
+  border-bottom: 4px solid var(--reg-burlywood);
+}
+
+.Registration-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  animation: Registration-bounce 2s infinite;
+}
+
+@keyframes Registration-bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.Registration-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  font-weight: bold;
+}
+
+.Registration-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  font-style: italic;
+  color: var(--reg-navajo);
+}
+
+/* ============================================
+   SUCCESS MESSAGE - Goldenrod/DarkGoldenRod
+   ============================================ */
+.Registration-successMessage {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 25px;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--reg-goldenrod) 0%, var(--reg-dark-golden) 100%);
+  border: 3px solid var(--reg-dark-golden);
+  border-radius: 12px;
+  color: var(--reg-maroon);
+  font-weight: 700;
+  animation: Registration-slideIn 0.4s ease;
+  box-shadow: 0 5px 20px rgba(184, 134, 11, 0.3);
+}
+
+.Registration-successIcon {
+  font-size: 1.5rem;
+  background: var(--reg-cornsilk);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--reg-dark-golden);
+}
+
+.Registration-successText {
+  flex: 1;
+}
+
+/* ============================================
+   ERROR BANNER - RosyBrown/Brown
+   ============================================ */
+.Registration-errorBanner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 25px;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--reg-rosy) 0%, var(--reg-brown) 100%);
+  border: 3px solid var(--reg-maroon);
+  border-radius: 12px;
+  color: var(--reg-cornsilk);
+  font-weight: 600;
+  animation: Registration-shake 0.5s ease;
+  box-shadow: 0 5px 20px rgba(128, 0, 0, 0.3);
+}
+
+@keyframes Registration-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.Registration-errorIcon {
+  font-size: 1.5rem;
+}
+
+.Registration-errorText {
+  flex: 1;
+}
+
+/* ============================================
+   FORM - все светлые тона
+   ============================================ */
+.Registration-form {
+  padding: 30px;
+}
+
+.Registration-formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.Registration-formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Registration-formGroup--fullWidth {
+  grid-column: 1 / -1;
+}
+
+.Registration-formGroup--password {
+  position: relative;
+}
+
+/* ============================================
+   LABELS - Sienna/SaddleBrown
+   ============================================ */
+.Registration-label {
+  font-weight: 700;
+  color: var(--reg-sienna);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, var(--reg-wheat), transparent);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border-left: 3px solid var(--reg-peru);
+}
+
+/* ============================================
+   INPUTS - Cornsilk/Wheat
+   ============================================ */
+.Registration-input {
+  padding: 14px 18px;
+  border: 2px solid var(--reg-burlywood);
+  border-radius: 10px;
+  background: var(--reg-cornsilk);
+  color: var(--reg-saddle);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(139, 69, 19, 0.08);
+}
+
+.Registration-input:focus {
+  outline: none;
+  border-color: var(--reg-sandy);
+  box-shadow: 0 0 0 4px rgba(244, 164, 96, 0.2), inset 0 2px 4px rgba(139, 69, 19, 0.05);
+  background: var(--reg-blanched);
+}
+
+.Registration-input--error {
+  border-color: var(--reg-rosy);
+  background: linear-gradient(180deg, #fff5f5 0%, var(--reg-blanched) 100%);
+  box-shadow: 0 0 0 3px rgba(188, 143, 143, 0.3);
+}
+
+.Registration-input::placeholder {
+  color: var(--reg-tan);
+  font-style: italic;
+}
+
+/* ============================================
+   PASSWORD TOGGLE - Font Awesome иконки
+   ============================================ */
+.Registration-passwordWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.Registration-passwordWrapper .Registration-input {
+  width: 100%;
+  padding-right: 45px;
+}
+
+.Registration-togglePassword {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--reg-saddle);
+  transition: all 0.2s ease;
+  z-index: 10;
+  padding: 0;
+}
+
+.Registration-togglePassword:hover {
+  color: var(--reg-chocolate);
+  transform: translateY(-50%) scale(1.15);
+}
+
+.Registration-togglePassword:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* ============================================
+   ERROR TEXT - Maroon
+   ============================================ */
+.Registration-errorText {
+  color: var(--reg-maroon);
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: rgba(188, 143, 143, 0.2);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border-left: 3px solid var(--reg-rosy);
+  animation: Registration-fadeIn 0.3s ease;
+}
+
+/* ============================================
+   HINT - Peru/Chocolate
+   ============================================ */
+.Registration-hint {
+  color: var(--reg-peru);
+  font-size: 0.8rem;
+  font-style: italic;
+  background: var(--reg-wheat);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border-left: 3px solid var(--reg-goldenrod);
+}
+
+/* ============================================
+   FORM FOOTER - Wheat/Burlywood
+   ============================================ */
+.Registration-formFooter {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 3px dashed var(--reg-burlywood);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.Registration-requiredFields {
+  color: var(--reg-sienna);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ============================================
+   SUBMIT BUTTON - SaddleBrown/Peru/Goldenrod
+   ============================================ */
+.Registration-submitBtn {
+  width: 100%;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, var(--reg-saddle) 0%, var(--reg-chocolate) 50%, var(--reg-peru) 100%);
+  color: var(--reg-cornsilk);
+  border: 3px solid var(--reg-saddle);
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.Registration-submitBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--reg-chocolate) 0%, var(--reg-peru) 50%, var(--reg-sandy) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4);
+}
+
+.Registration-submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background: var(--reg-tan);
+}
+
+/* ============================================
+   SPINNER - Goldenrod
+   ============================================ */
+.Registration-spinner {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--reg-cornsilk);
+  border-top-color: var(--reg-goldenrod);
+  border-radius: 50%;
+  animation: Registration-spin 1s linear infinite;
+}
+
+@keyframes Registration-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   LOGIN LINK - Burlywood/SaddleBrown
+   ============================================ */
+.Registration-loginLink {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(180deg, var(--reg-wheat) 0%, var(--reg-burlywood) 100%);
+  color: var(--reg-sienna);
+  border-top: 3px solid var(--reg-burlywood);
+  font-size: 1rem;
+}
+
+.Registration-link {
+  color: var(--reg-saddle);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid var(--reg-peru);
+  transition: all 0.2s ease;
+}
+
+.Registration-link:hover {
+  color: var(--reg-maroon);
+  border-bottom-color: var(--reg-maroon);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 600px) {
+  .Registration {
+    padding: 20px 15px;
+  }
+  
+  .Registration-card {
+    border-radius: 16px;
+    border-width: 3px;
+  }
+  
+  .Registration-header {
+    padding: 25px;
+  }
+  
+  .Registration-title {
+    font-size: 1.6rem;
+  }
+  
+  .Registration-form {
+    padding: 20px;
+  }
+  
+  .Registration-formRow {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .Registration-successMessage,
+  .Registration-errorBanner {
+    margin: 15px;
+    padding: 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .Registration-submitBtn {
+    font-size: 1.1rem;
+    padding: 14px 24px;
+  }
+}
+
+/* ============================================
+   SCROLLBAR - полный градиент
+   ============================================ */
+.Registration ::-webkit-scrollbar {
+  width: 10px;
+}
+
+.Registration ::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, var(--reg-cornsilk), var(--reg-blanched));
+  border-radius: 5px;
+  border: 1px solid var(--reg-burlywood);
+}
+
+.Registration ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--reg-burlywood) 0%, var(--reg-saddle) 50%, var(--reg-chocolate) 100%);
+  border-radius: 5px;
+  border: 2px solid var(--reg-cornsilk);
+}
+
+.Registration ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--reg-tan) 0%, var(--reg-saddle) 50%, var(--reg-maroon) 100%);
+}
+
+
+.Registration-errorList {
+  margin: 4px 0 0 0;
+  padding-left: 16px;
+  list-style: disc;
+}
+
+.Registration-errorList li {
+  margin-bottom: 2px;
+}
