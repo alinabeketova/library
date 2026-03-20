@@ -67,6 +67,7 @@ class BookReservationRepository(BaseRepository[CreateBookReservationDTO, UpdateB
                 (
                     await self._session.execute(
                         select(
+                            self.model.id.label("book_reservation_id"),
                             self.book_model.id.label("book_id"),
                             self.book_model.title.label("book_title"),
                             self.book_model.isbn,
@@ -87,6 +88,7 @@ class BookReservationRepository(BaseRepository[CreateBookReservationDTO, UpdateB
                         .join(self.author_model, self.author_model.id == self.book_author_model.author_id, isouter=True)
                         .join(self.user_model, self.user_model.id == self.model.user_id)
                         .group_by(
+                            self.model.id,
                             self.book_model.id,
                             self.book_model.title,
                             self.book_model.isbn,

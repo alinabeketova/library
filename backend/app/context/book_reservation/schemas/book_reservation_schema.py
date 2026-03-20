@@ -30,6 +30,7 @@ class SelectBookReservationByUser(Base):
 
 
 class SelectBookReservation(Base):
+    book_reservation_id:int
     book_id: int
     book_title: str
     isbn: str
