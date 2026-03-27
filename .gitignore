@@ -22,6 +22,7 @@ log.txt
 .env.*
 env3.*
 .venv/
+venv/
 Pipfile.lock
 
 # Documentation
@@ -38,7 +39,7 @@ archive.zip
 .DS_Store
 
 # Dependencies
-/node_modules/
+node_modules/
 /.pnp
 .pnp.js
 
